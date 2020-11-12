@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1><img src="images/logo/ohmyfood@2x.svg"></h1>
+        </div>
+    </header>
+    <main class="container">
+        <div class="location">
+            <div class="location__mappy">
+                <form method="post" action="traitement.php">
+                    <p> 
+                      <label for="Ville"> </label>
+                      <input class="input_formulaire" type="text" name="Ville" id="Ville" placeholder="Paris, Belleville"/>
+                    </p>
+                </form>
+            </div>
+            <div class="location__presentation">
+                <h2>Réservez le menu qui vous convient</h2>
+                <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.
+                </p>
+                <button class="btn">
+                    <span>Explorer nos restaurants</span>
+                </button>
+            </div>
+        </div>
+        <div class="functionning">
+            <h2>Fonctionnement</h2>
+            <div class="functionning__btn">
+                <button class="functionning__btn--1">
+                    <span>Choisissez un restaurant</span>
+                </button>
+                <button class="functionning__btn--2">
+                    <span>Composez votre menu</span>
+                </button>
+                <button class="functionning__btn--3">
+                    <span>Dégustez au restaurant</span>
+                </button>
+            </div>
+        </div>
+        <div class="restaurant">
+            <h2>Restaurants</h2>
+            <div class="restaurant__card">
+                <a href="#">
+                <img src="images/restaurants/">
+                <h3 class="restaurant__card--name">La palette du goût</h3>
+                <p class="restaurant__card--place">Ménilmontant</p>
+                </a>
+            </div>
+            <div class="restaurant__card">
+                    <a href="#">
+                    <img src="images/restaurants/">
+                    <h3 class="restaurant__card--name">La note enchantée</h3>
+                    <p class="restaurant__card--place">Charonne</p>
+                    </a> 
+            </div>
+            <div class="restaurant__card">
+                    <a href="#">
+                    <img src="images/restaurants/">
+                    <h3 class="restaurant__card--name">A la française</h3>
+                    <p class="restaurant__card--place">Cité Rouge</p>
+                    </a>
+            </div>
+            <div class="restaurant__card">
+                    <a href="#">
+                    <img src="images/restaurants/">
+                    <h3 class="restaurant__card--name">Le délice des sens</h3>
+                    <p class="restaurant__card--place">Folie-Méricourt</p>
+                    </a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+
+    </footer>
+</body>
+</html>
