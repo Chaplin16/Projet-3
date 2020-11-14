@@ -136,12 +136,12 @@ h1 {
   justify-content: space-between;
 }
 .work .work__btn--1, .work .work__btn--2, .work .work__btn--3 {
-  padding-top: 1.2rem;
+  padding-top: 1.3rem;
   padding-bottom: 1.2rem;
   margin: 0.8rem 2rem 0.5rem 1.2rem;
   border-radius: 20px;
-  border-color: none;
-  box-shadow: 2px 1px 8px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  box-shadow: 1.5px 1px 8px 1px rgba(0, 0, 0, 0.2);
   font-size: 0.9rem;
   font-family: "roboto";
 }
@@ -149,7 +149,7 @@ h1 {
 .work__title,
 .restaurant__title {
   font-weight: bold;
-  padding-left: 0.9rem;
+  padding-left: 1rem;
   font-size: 1.35rem;
   padding-bottom: 0.5rem;
 }
@@ -174,7 +174,7 @@ h1 {
   margin-bottom: 1.2rem;
   padding-bottom: 0.9rem;
   background-color: #FFF;
-  box-shadow: 2px 1px 13px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 1px 9px 1px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
 }
 .restaurant__card img {
@@ -197,6 +197,33 @@ h1 {
   font-size: 0.95rem;
   padding-left: 0.8rem;
   padding-top: 0.1rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #FFF;
+  margin-right: 1rem;
+  padding-bottom: 1.7rem;
+}
+.footer--logo {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.1rem;
+}
+.footer ul {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  padding-left: 1.1rem;
+}
+.footer li:first-child,
+.footer li:nth-of-type(2) {
+  padding-left: 1.5rem;
+}
+.footer a {
+  color: #FFF;
 }
 
 /*# sourceMappingURL=style.css.map */
