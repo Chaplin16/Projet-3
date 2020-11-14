@@ -5,6 +5,7 @@ $color__bg--light:rgba(192, 196, 200, 0.2);
 $color__dark--light: rgba(0, 0, 0, 0.2);
 $color__dark--medium: rgba(0, 0, 0, 0.5);
 $color__dark--dark: rgba(0, 0, 0, 0.7);
+$color__white: #FFF;
 
 :root {
     font-family: "roboto","sans-serif";
@@ -96,12 +97,12 @@ h1{
                 &--1,
                 &--2,
                 &--3{
-                    padding-top: 1.2rem;
+                    padding-top: 1.3rem;
                     padding-bottom: 1.2rem;
                     margin: 0.8rem 2rem 0.5rem 1.2rem;
                     border-radius: 20px;
-                    border-color: none;
-                    box-shadow: 2px 1px 8px 1px $color__dark--light;
+                    border: none;
+                    box-shadow: 1.5px 1px 8px 1px $color__dark--light;
                     font-size: 0.9rem;
                     font-family: "roboto";
                 }
@@ -111,7 +112,7 @@ h1{
 .work__title,
 .restaurant__title {
     font-weight: bold;
-    padding-left: 0.9rem;
+    padding-left: 1rem;
     font-size: 1.35rem;
     padding-bottom: 0.5rem;
 }
@@ -134,8 +135,8 @@ h1{
             margin-left:1.1rem;
             margin-bottom: 1.2rem;
             padding-bottom: 0.9rem;
-            background-color: #FFF;
-            box-shadow: 2px 1px 13px 1px $color__dark--light;
+            background-color: $color__white;
+            box-shadow: 2px 1px 9px 1px $color__dark--light;
             border-radius: 15px;
             img {
                 width: 100%;
@@ -160,3 +161,30 @@ h1{
             }
         }
 }  
+
+.footer {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: $color__white;
+    margin-right: 1rem;
+    padding-bottom: 1.7rem;
+    &--logo {
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1.1rem;
+    }
+    ul {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        padding-left: 1.1rem;
+    }
+    li:first-child,
+    li:nth-of-type(2) {
+        padding-left: 1.5rem;
+    }
+    a{
+        color: $color__white;
+    }
+}
