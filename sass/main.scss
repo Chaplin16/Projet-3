@@ -82,6 +82,8 @@ h1{
     padding: 0.6rem 1.3rem;
     border-radius: 60px;
     font-family: "roboto";
+    border: none;
+    background-color: violet;
 }
 
 .work {
@@ -94,9 +96,10 @@ h1{
             flex-direction: column;
             width: 100%;
             justify-content: space-between;
+            position: relative;
                 &--1,
                 &--2,
-                &--3{
+                &--3 {
                     padding-top: 1.3rem;
                     padding-bottom: 1.2rem;
                     margin: 0.8rem 2rem 0.5rem 1.2rem;
@@ -106,8 +109,36 @@ h1{
                     font-size: 0.9rem;
                     font-family: "roboto";
                 }
+                &--1::after,
+                &--2::after,
+                &--3::after {
+                    content: '';
+                    display: block; 
+                    position: absolute;
+                    background-repeat: no-repeat;
+                    width: 7%;
+                    height:7%;
+                    opacity: 0.4;
+                    
+                }
+                &--1::after {
+                    background-image: url("../images/logo/mobile.svg");
+                    top: 2rem;
+                    left:4rem;        
+                }
+                &--2::after {
+                    background-image: url("../images/logo/list.svg");
+                    top: 7rem;
+                    left:4rem;
+                }
+                &--3::after {
+                    background-image: url("../images/logo/store.svg");
+                    top: 12rem;
+                    left:4rem;
+                }
+           }
         }      
-}
+
 
 .work__title,
 .restaurant__title {
