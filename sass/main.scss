@@ -29,7 +29,7 @@ a {
     text-decoration: none;
 }
 
-h1, h4 {
+h1, h5 {
     font-family: "shrikhand";
 }
 
@@ -264,19 +264,18 @@ h1{
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.8);
     color: $color__white;
-
+    padding-top: 1.5rem;
     padding-bottom: 1.7rem;
     position: relative;
     z-index: 1;
-        &--logo {
-            padding-top: 1rem;
+        h5 { 
             padding-bottom: 0.5rem;
-            margin-left: 1.1rem;
+            padding-left: 2rem;
         }
         ul {
             font-size: 0.9rem;
             line-height: 1.5rem;
-            padding-left: 1.1rem;
+            padding-left: 2rem;
                 li:first-child,
                 li:nth-of-type(2) {
                     padding-left: 1.5rem;
@@ -294,13 +293,13 @@ h1{
                 li {
                     &:first-child::before {
                         background-image: url("../images/logo/utensils.svg");
-                        top:3.3rem;
-                        left: 1.2rem;
+                        top:3.7rem;
+                        left: 2rem;
                      }
                     &:nth-of-type(2)::before {
                         background-image: url("../images/logo/hands-helping.svg");
-                        top: 4.8rem;
-                        left:1.2rem; 
+                        top: 5.3rem;
+                        left:2rem; 
                         z-index: 5;   
                     }
                 }   
@@ -310,6 +309,7 @@ h1{
     }
 }
 // menu du restaurant: La palette du gout//
+// insertion de la fleche de retour en haut à gauche//
 .header__page--menu a{
     &::before{
         content: " ";
@@ -321,7 +321,7 @@ h1{
         width: 1.3rem;
         height: 1.3rem;
         top: 0.8rem;
-        left: 3rem;
+        left:1.6rem;
     }    
 }
 .container__menu {
@@ -329,40 +329,115 @@ h1{
     width: 100%;
         p {
             width: 100%;
-            z-index: 1;
+            object-position: bottom;
+            object-fit: cover;
+            max-height: 20rem;
         }
 }
+// nom du restaurant en haut du menu//
 .menu {  
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;;
     background-color: $color__bg--medium;
     width: 100%;
     padding-top: 2rem;
-    z-index: 10;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
     opacity: 1;
     margin-top: -4rem;
+    padding-bottom: 5rem;
         h2 {
-     font-family: "shrikhand";
-     font-size: 1.5rem;
-     padding-left: 1.3rem;
-     font-weight: bold;
-     color: $color__dark--top;
-     letter-spacing: 0.1vh;
-     padding-bottom: 2rem;
-            &::before {
-                content:" ";
-                float: right;
-                position: relative;
-                background-image: url("../images/logo/heart.svg");
-                background-repeat: no-repeat;
-                clear: both;
-                opacity: 0.6;
-                width: 1.5rem;
-                height: 1.5rem;
-                top: 0.3rem;
-                right: 1.5rem;
-            }
-
+            font-family: "shrikhand";
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $color__dark--top;
+            letter-spacing: 0.1vh;
+            padding-bottom: 2rem;
+            padding-left: 0.6vh;
+                //insertion du coeur à droite du nom du resto//
+                &::before {
+                    content:" ";
+                    float: right;
+                    position: relative;
+                    background-image: url("../images/logo/heart.svg");
+                    background-repeat: no-repeat;
+                    clear: both;
+                    opacity: 0.6;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    top: 0.3rem;
+                    right: 1.7rem;
+                }
     }
 }
+// sous-titres du menu Entree Plat et Dessert//
+h3 {
+    color: $color__dark--dark;
+    padding-left: 0.6vh;   
+        &::after{
+            content: " ______ ";
+            display: block; 
+            position: relative;
+            color: $color__green--light;
+            bottom: 0.5rem;
+            font-weight: bold;
+        }
+        &::before{
+            content: " ______ ";
+            display: block; 
+            position: relative;
+            color: $color__green--light;
+            bottom: 0.5rem;
+            top: 2rem;
+        }
+}
 
+.menu__card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 4.5rem;
+    line-height: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;  
+    padding-left: 0.2rem;
+    border-radius: 12px;
+    background-color: $color__white;    
+        span {
+            float: right;
+            position: relative; 
+            bottom: 1.1rem;
+            right: 1rem;
+            color: $color__dark--dark;
+            font-weight: bold;
+        }
+        h4 {
+           color: $color__dark--top;
+           font-size: 1.1rem;
+           font-weight: bold;
+           padding-top: 1.6vh;
+           padding-left: 1vh;
+        }
+        p {
+            color: $color__dark--dark;
+            padding-left: 1vh;
+            padding-top: 1vh;
+            max-width: 85%;
+        }
+}
+.menu {
+    .btn {
+        margin-top: 2rem;
+        padding: 1rem 3rem;
+        font-size: 1.1rem;
+        color: $color__white;
+    }
+}
+.menu__main-course{
+        __card:first-child{
+            height: 6.5rem;
+        }
+    }
