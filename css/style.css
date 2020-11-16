@@ -57,7 +57,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 0.5rem;
 }
 
 a {
@@ -75,7 +74,8 @@ h1 {
   padding-bottom: 0.5rem;
 }
 
-.container {
+.container,
+.container__menu {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -87,7 +87,6 @@ h1 {
   background-color: rgba(192, 196, 200, 0.2);
   display: flex;
   flex-direction: column;
-  margin-right: 1rem;
   height: 15.5rem;
 }
 .location__presentation p {
@@ -140,7 +139,7 @@ h1 {
 .work .work__btn--1, .work .work__btn--2, .work .work__btn--3 {
   padding-top: 1.3rem;
   padding-bottom: 1.2rem;
-  margin: 0.8rem 2rem 0.5rem 1.2rem;
+  margin: 0.8rem 1.7rem 0.5rem 1.2rem;
   border-radius: 20px;
   border: none;
   box-shadow: 1.5px 1px 8px 1px rgba(0, 0, 0, 0.2);
@@ -205,7 +204,6 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-right: 1rem;
   padding-bottom: 2.5rem;
   border: 1px solid rgba(192, 196, 200, 0.2);
   background-color: rgba(192, 196, 200, 0.2);
@@ -217,9 +215,11 @@ h1 {
 }
 .restaurant__card {
   width: 90%;
-  margin-left: 1.1rem;
   margin-bottom: 1.2rem;
   padding-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+  margin-right: 2%;
+  margin-left: 5%;
   background-color: #FFF;
   box-shadow: 2px 1px 9px 1px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
@@ -286,7 +286,6 @@ h1 {
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.8);
   color: #FFF;
-  margin-right: 1rem;
   padding-bottom: 1.7rem;
   position: relative;
   z-index: 1;
@@ -310,25 +309,78 @@ h1 {
   content: "";
   display: block;
   position: absolute;
-  color: #FFF;
   background-repeat: no-repeat;
   width: 1rem;
   height: 1rem;
-  opacity: 1;
 }
 .footer ul li:first-child::before {
-  background-image: url("../images/logo/utensils--white.png");
+  background-image: url("../images/logo/utensils.svg");
   top: 3.3rem;
   left: 1.2rem;
 }
 .footer ul li:nth-of-type(2)::before {
-  background-image: url("../images/logo/hands-helping--white.png");
+  background-image: url("../images/logo/hands-helping.svg");
   top: 4.8rem;
   left: 1.2rem;
   z-index: 5;
 }
 .footer a {
   color: #FFF;
+}
+
+.header__page--menu a::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  background-image: url("../images/logo/arrow-left.svg");
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  width: 1.3rem;
+  height: 1.3rem;
+  top: 0.8rem;
+  left: 3rem;
+}
+
+.container__menu {
+  border: 1px solid transparent;
+  width: 100%;
+}
+.container__menu p {
+  width: 100%;
+  z-index: 1;
+}
+
+.menu {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: #e9ecf0;
+  width: 100%;
+  padding-top: 2rem;
+  z-index: 10;
+  opacity: 1;
+  margin-top: -4rem;
+}
+.menu h2 {
+  font-family: "shrikhand";
+  font-size: 1.5rem;
+  padding-left: 1.3rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.1vh;
+  padding-bottom: 2rem;
+}
+.menu h2::before {
+  content: " ";
+  float: right;
+  position: relative;
+  background-image: url("../images/logo/heart.svg");
+  background-repeat: no-repeat;
+  clear: both;
+  opacity: 0.6;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 0.3rem;
+  right: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
