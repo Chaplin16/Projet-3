@@ -190,7 +190,7 @@ h1{
         &__card {
             width: 90%;
             margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
+            padding-bottom: 0rem;
             margin-bottom:1.5rem;
             margin-right: 2%;
             margin-left: 5%;
@@ -218,7 +218,6 @@ h1{
                 } 
                 &:nth-of-type(1),
                 &:nth-of-type(2) { 
-                    padding-bottom:0;
                     height: 14rem;
                 }             
                 img {
@@ -228,85 +227,57 @@ h1{
                     border-top-left-radius: 15px;
                     border-top-right-radius: 15px;
                 }            
-        &--name {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            padding-left: 0.8rem;
-            padding-top: 1rem;
-                //insertion des coeurs sur les images de retaurants//
-                &::before {
-                    content:" ";
+                &--name {
+                    text-decoration: none;
+                    color: black;
+                    font-weight: bold;
+                    padding-left: 0.8rem;
+                    padding-top: 1rem;
+                        //insertion des coeurs sur les images de retaurants//
+        
+                }
+                &--place {
+                    text-decoration: none;
+                    color: $color__dark--dark;
+                    font-size: 0.95rem;
+                    padding-left:0.8rem;
+                    padding-top: 0.6rem;
+                }
+            // insetion du coeur à droite du nom du restaurant//
+                i {
                     float: right;
                     position: relative;
-                    background-image: url("../images/logo/heart.svg");
-                    background-repeat: no-repeat;
-                    clear: both;
-                    opacity: 0.6;
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    top: 0.3rem;
-                    right: 1.5rem;
-                }
-        }
-        &--place {
-            text-decoration: none;
-            color: $color__dark--dark;
-            font-size: 0.95rem;
-            padding-left:0.8rem;
-            padding-top: 0.6rem;
-        }                     
-    }    
+                    bottom: 2.3rem;
+                    right: 2rem;
+                 
+                }                     
+        }    
 }
 .footer {
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
     background-color: rgba(0, 0, 0, 0.8);
     color: $color__white;
-    padding-top: 1.5rem;
-    padding-bottom: 1.7rem;
-    position: relative;
     z-index: 1;
-        h5 { 
-            padding-bottom: 0.5rem;
-            padding-left: 2rem;
+        a{
+        color: $color__white;
         }
         ul {
+            margin-top: 0.5rem;
             font-size: 0.9rem;
             line-height: 1.5rem;
-            padding-left: 2rem;
-                li:first-child,
-                li:nth-of-type(2) {
-                    padding-left: 1.5rem;
-                    //insertion des 2 icones dans le footer//
-                    &::before{
-                            content: "";
-                            display: block; 
-                            position: absolute;
-                            background-repeat: no-repeat;
-                            width: 1rem;
-                            height: 1rem;
-                            
-                        }
-                }
-                li {
-                    &:first-child::before {
-                        background-image: url("../images/logo/utensils.svg");
-                        top:3.7rem;
-                        left: 2rem;
-                     }
-                    &:nth-of-type(2)::before {
-                        background-image: url("../images/logo/hands-helping.svg");
-                        top: 5.3rem;
-                        left:2rem; 
-                        z-index: 5;   
+                li:first-child{ 
+                    i {
+                        padding-right:1rem;
                     }
-                }   
-        }
-    a{
-        color: $color__white;
-    }
+               }
+               li:nth-of-type(2){
+                   i {
+                       padding-right: 0.6rem;
+                   }
+               }
+        }      
 }
 // menu du restaurant: La palette du gout//
 // insertion de la fleche de retour en haut à gauche//
@@ -351,23 +322,13 @@ h1{
             font-weight: bold;
             color: $color__dark--top;
             letter-spacing: 0.1vh;
-            padding-bottom: 2rem;
             padding-left: 0.6vh;
-                //insertion du coeur à droite du nom du resto//
-                &::before {
-                    content:" ";
-                    float: right;
-                    position: relative;
-                    background-image: url("../images/logo/heart.svg");
-                    background-repeat: no-repeat;
-                    clear: both;
-                    opacity: 0.6;
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    top: 0.3rem;
-                    right: 1.1rem;
+        // insertion du coeur à droite du nom du resto//        
+                i {
+                float: right;
+                margin-right: 1.5rem;
                 }
-        }
+        }   
         &__starter,
         &__main-course,
         &__dessert {
@@ -403,7 +364,7 @@ h1{
             color: $color__white;
         }
 }
-
+//la liste des plats dans le menu//
 .menu__card {
     display: flex;
     flex-direction: row;
@@ -413,11 +374,12 @@ h1{
     margin-top:0.5rem;
     padding-left: 0.2rem;
     border-radius: 12px;
-    border: 1px solid $color__white;
     background-color: $color__white; 
+    opacity:1;
         a{
             width: 100%;
-        }   
+        } 
+    //le prix//  
         span {
             float: right;
             position: relative; 
@@ -426,6 +388,7 @@ h1{
             color: $color__dark--dark;
             font-weight: bold;
         }
+    //le nom du plat//
         h4 {
            color: $color__dark--top;
            font-size: 1rem;
@@ -434,6 +397,7 @@ h1{
            max-width: 88%;
            margin-top: 0.5rem;
         }
+    //le detail du plat//
         p { 
             font-size: 0.9rem;
             color: $color__dark--dark;
