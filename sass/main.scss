@@ -3,6 +3,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 $color__bg--dusky: #e2e3e4;
 $color__bg--medium: #e9ecf0;
 $color__bg--light:rgba(192, 196, 200, 0.2);
+$color__dark: rgb(0, 0, 0);
 $color__dark--light: rgba(0, 0, 0, 0.2);
 $color__dark--medium: rgba(0, 0, 0, 0.5);
 $color__dark--dark: rgba(0, 0, 0, 0.7);
@@ -10,6 +11,29 @@ $color__dark--top:  rgba(0, 0, 0, 0.9);
 $color__green--light:rgb(142, 236, 216); 
 $color__green--dark: rgb(35, 153, 128);
 $color__white: #FFF;
+$color__pink: rgb(231, 108, 231);
+$color__purple: #ceb9ff;
+$color__gradient: linear-gradient(#e76ce7,#a28ada);
+
+@keyframes progress--heart {
+    0% {
+        background-color: 0%;
+        color: $color__pink;
+        opacity: 0;
+    }
+    60% {
+        background-color: 50%;
+        color:#ee7cdb;
+        opacity: 0.5;
+    }
+    100% {
+        background-color: 100%;
+        color: $color__gradient;
+        opacity: 1;
+    }
+}
+
+
 
 :root {
     font-family: "roboto","sans-serif";
@@ -22,7 +46,6 @@ body {
     display: flex; 
     flex-direction: column;
     width: 100%;
-
 }
 
 a {
@@ -53,7 +76,6 @@ h1{
     background-color: $color__bg--light;
     display: flex;
     flex-direction: column;
-
     height: 15.5rem;
         &__presentation  p {
             font-size: 0.9rem;
@@ -84,11 +106,21 @@ h1{
 .btn {
     display: block;
     margin: auto;
-    padding: 0.6rem 1.3rem;
+    position: relative;
+    z-index: 1;
+    padding: 0.8rem 1.3rem;
     border-radius: 60px;
     font-family: "roboto";
+    color: $color__white;
     border: none;
-    background-color: violet;
+    background: $color__gradient;
+    box-shadow: 1px 1px 8px 1px $color__dark--medium;
+    transition: all 300ms;
+        &:hover { 
+            transform: scale(1.01);
+            opacity: 0.85;
+            box-shadow: 2px 2px 9px 2px $color__dark--top;
+        }
 }
 //partie fonctionnement//
 .work {
@@ -111,9 +143,31 @@ h1{
                     border: none;
                     box-shadow: 1.5px 1px 8px 1px $color__dark--light;
                     font-size: 0.9rem;
+                    font-weight: bold;
                     font-family: "roboto";
                     counter-reset: compteListe;
                     position: relative;
+                    transition: 300ms;
+                // insertion des icones des " boutons du fonctionnement//
+                        i {
+                            float:left;
+                            padding-left: 15%;
+                            opacity: 0.5; 
+                            font-size: 1.2rem;
+                        }
+                        &:hover {
+                            background-color: lighten($color__purple, 30);
+                            z-index: 1;
+                                i {
+                                    color: $color__purple;
+                                    opacity:1;
+                                    z-index: 5;
+                                }
+                        }
+                }
+                &--2 span,
+                &--3 span {
+                    margin-right: 1.8rem;
                 }
                 // insertion des ronds numerotés sur les 3 boutons de fonctionnement//
                 &--1::after,
@@ -123,7 +177,7 @@ h1{
                     content: counter(compteListe) " ";
                     display: block;
                     position: absolute; 
-                    background: rgb(187, 93, 187);
+                    background-color: $color__purple;
                     font-size: 0.8rem;
                     font-weight: bold;
                     color: $color__white;
@@ -139,30 +193,7 @@ h1{
                 }
                 &--3::after {
                     counter-increment: compteListe 3;
-                }
-                //insertion des icones sur les 3 boutons de fonctionnement//
-                &--1::before,
-                &--2::before,
-                &--3::before {   
-                    content: " ";
-                    display: block;
-                    position: absolute;
-                    background-repeat: no-repeat;
-                    width: 1.2rem;
-                    height: 1.2rem;
-                    opacity: 0.4;
-                    top: 1.3rem;
-                    left: 2.5rem;
-                }             
-                &--1::before {
-                    background-image: url("../images/logo/mobile.svg");                          
-                }
-                &--2::before {
-                    background-image: url("../images/logo/list.svg");                   
-                }
-                &--3::before {
-                    background-image: url("../images/logo/store.svg");                   
-                }
+                }        
         }
 }     
 
@@ -198,7 +229,7 @@ h1{
             box-shadow: 2px 1px 9px 1px $color__dark--light;
             border-radius: 15px;
             line-height: 0.9rem;
-                //insertion  des 2 icones "nouveau" sur les 2 premieres images de restaurant//
+        //insertion  des 2 mots encadrés "nouveau" sur les 2 premieres images de restaurant//
                 &:nth-of-type(1)::after,
                 &:nth-of-type(2)::after {
                     content:" Nouveau ";
@@ -213,7 +244,7 @@ h1{
                     width: 5.5rem;
                     height: 1.8rem;                       
                     clear:right;
-                    bottom: 11.8rem;
+                    bottom: 13rem;
                     right: 0.6rem;
                 } 
                 &:nth-of-type(1),
@@ -243,16 +274,39 @@ h1{
                     padding-left:0.8rem;
                     padding-top: 0.6rem;
                 }
-            // insetion du coeur à droite du nom du restaurant//
-                i {
+        // insertion du coeur à droite du nom du restaurant//
+                .far {
                     float: right;
                     position: relative;
                     bottom: 2.3rem;
                     right: 2rem;
-                 
+                    opacity:1;
+                    z-index: 5;
+                    color: $color__dark--medium;
+                    &:hover {
+                        opacity: 0;
+                        z-index: 1;
+                    }
+                }    
+                .fas {
+                    opacity:0;
+                    float: right;
+                    position: relative;
+                    z-index: 1;
+                    bottom: 2.3rem;
+                    right: 0rem; 
+                    transition: all scale(1);
+                    &:hover {
+                        transform: scale(1.05);
+                        animation: progress--heart 500ms;
+                        opacity:1;
+                        z-index: 5;
+                        color: #9327ec;
+                    }
+                }
                 }                     
         }    
-}
+
 .footer {
     padding-left: 2rem;
     padding-top: 1rem;
