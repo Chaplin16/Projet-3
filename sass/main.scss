@@ -11,14 +11,13 @@ $color__dark--top:  rgba(0, 0, 0, 0.9);
 $color__green--light:rgb(142, 236, 216); 
 $color__green--dark: rgb(35, 153, 128);
 $color__white: #FFF;
-$color__pink: rgb(231, 108, 231);
-$color__purple: #ceb9ff;
-$color__gradient: linear-gradient(#e76ce7,#a28ada);
+$color__purple:#8d51ee;
+$color__gradient: linear-gradient(#e76ce7,#a37cfd);
 
 @keyframes progress--heart {
     0% {
         background-color: 0%;
-        color: $color__pink;
+        color: #e76ce7;
         opacity: 0;
     }
     60% {
@@ -32,6 +31,30 @@ $color__gradient: linear-gradient(#e76ce7,#a28ada);
         opacity: 1;
     }
 }
+@keyframes card--validate {
+    0% {
+        background-color: $color__green--light;
+    }
+    50% {
+        background-color: $color__green--light;
+    }
+    100%{
+        background-color: $color__green--light;
+    }
+}
+@keyframes turn {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 
 
 
@@ -155,8 +178,9 @@ h1{
                             opacity: 0.5; 
                             font-size: 1.2rem;
                         }
+                //insertion de la couleur de fond des boutons de fonctionnement
                         &:hover {
-                            background-color: lighten($color__purple, 30);
+                            background-color: lighten($color__purple, 31);
                             z-index: 1;
                                 i {
                                     color: $color__purple;
@@ -177,7 +201,7 @@ h1{
                     content: counter(compteListe) " ";
                     display: block;
                     position: absolute; 
-                    background-color: $color__purple;
+                    background-color: #8d51ee;
                     font-size: 0.8rem;
                     font-weight: bold;
                     color: $color__white;
@@ -333,6 +357,7 @@ h1{
                }
         }      
 }
+//_________________________________________________________//
 // menu du restaurant: La palette du gout//
 // insertion de la fleche de retour en haut à gauche//
 .header__page--menu a{
@@ -430,21 +455,43 @@ h1{
     border-radius: 12px;
     background-color: $color__white; 
     opacity:1;
+    overflow: hidden;
+    position: relative;
+        &:hover .menu__card--validate {
+            opacity: 1;
+            transform: scaleX(1);
+            animation: card--validate;
+               > .fa-check-circle {
+                        animation: turn 1s linear 2;
+               }
+        }      
+        .test {
+            display: flex;
+            justify-content: flex-end;
+            height: 100%;
+        }
         a{
             width: 100%;
         } 
     //le prix//  
         span {
-            float: right;
             position: relative; 
-            bottom: 1.3rem;
-            right: 1rem;
+            height: auto;
+            bottom:1.3rem;
             color: $color__dark--dark;
             font-weight: bold;
+            transition: transform 800ms;
+        }
+        &:hover {
+            span {
+            transform: translateX(-0.9rem);
+            opacity: 1;   
+            }       
         }
     //le nom du plat//
         h4 {
            color: $color__dark--top;
+           white-space: nowrap;
            font-size: 1rem;
            font-weight: bold;
            padding-left: 1vh;
@@ -458,4 +505,48 @@ h1{
             padding-left: 1vh;
             max-width: 83%;
         }
+        &--validate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height:100%;
+            background-color: $color__green--light;
+            color: $color__white;
+            opacity: 1;
+            border-radius: 0 12px 12px 0;
+            transform: scaleX(0);
+            transition: transform 800ms;
+            transform-origin: right 50%;    
+            margin-top:-2.9rem;             
+        }
+    //animation//
+}   
+
+@keyframes turn {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
+/*.menu__card {
+  transform: scaleX(0);
+  transition: transform 1500ms;
+
+    &:active {
+        transform-origin: left;
+        transform: scaleX(0.2);
+        background-color: $color__green--light;
+    }
+} 
+*/                   
+
+
+    
+
+
