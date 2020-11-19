@@ -54,10 +54,6 @@ $color__gradient: linear-gradient(#e76ce7,#a37cfd);
     }
 }
 
-
-
-
-
 :root {
     font-family: "roboto","sans-serif";
     font-size: 1.1rem;
@@ -145,7 +141,7 @@ h1{
             box-shadow: 2px 2px 9px 2px $color__dark--top;
         }
 }
-//partie fonctionnement//
+//partie deuxieme bloc: fonctionnement//
 .work {
     display: flex; 
     flex-direction: column;
@@ -228,7 +224,7 @@ h1{
     font-size: 1.35rem;
     padding-bottom: 0.5rem;
 }
-//partie restaurant//
+//partie troisieme bloc: restaurant//
 .restaurant {
     display: flex; 
     flex-direction: column;
@@ -288,8 +284,6 @@ h1{
                     font-weight: bold;
                     padding-left: 0.8rem;
                     padding-top: 1rem;
-                        //insertion des coeurs sur les images de retaurants//
-        
                 }
                 &--place {
                     text-decoration: none;
@@ -330,7 +324,7 @@ h1{
                 }
                 }                     
         }    
-
+//bas de page//
 .footer {
     padding-left: 2rem;
     padding-top: 1rem;
@@ -359,6 +353,7 @@ h1{
 }
 //_________________________________________________________//
 // menu du restaurant: La palette du gout//
+
 // insertion de la fleche de retour en haut à gauche//
 .header__page--menu a{
     &::before{
@@ -401,12 +396,7 @@ h1{
             font-weight: bold;
             color: $color__dark--top;
             letter-spacing: 0.1vh;
-            padding-left: 0.6vh;
-        // insertion du coeur à droite du nom du resto//        
-                i {
-                float: right;
-                margin-right: 1.5rem;
-                }
+            padding-left: 0.6vh;           
         }   
         &__starter,
         &__main-course,
@@ -448,6 +438,7 @@ h1{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 100%;
     line-height: 1.2rem;;
     margin-bottom: 0.5rem;
     margin-top:0.5rem;
@@ -457,6 +448,7 @@ h1{
     opacity:1;
     overflow: hidden;
     position: relative;
+//apparition de la partie verte/check-validation du plat//   
         &:hover .menu__card--validate {
             opacity: 1;
             transform: scaleX(1);
@@ -465,13 +457,14 @@ h1{
                         animation: turn 1s linear 2;
                }
         }      
-        .test {
+        .menu__card--price-check {
             display: flex;
             justify-content: flex-end;
             height: 100%;
         }
         a{
             width: 100%;
+            height: 100%;
         } 
     //le prix//  
         span {
@@ -482,29 +475,29 @@ h1{
             font-weight: bold;
             transition: transform 800ms;
         }
+    //deplacement du prix lors de la validation du plat//
         &:hover {
             span {
             transform: translateX(-0.9rem);
             opacity: 1;   
             }       
         }
-    //le nom du plat//
         h4 {
            color: $color__dark--top;
            white-space: nowrap;
            font-size: 1rem;
            font-weight: bold;
            padding-left: 1vh;
-           max-width: 88%;
+           max-width: 80%;
            margin-top: 0.5rem;
         }
-    //le detail du plat//
         p { 
             font-size: 0.9rem;
             color: $color__dark--dark;
             padding-left: 1vh;
-            max-width: 83%;
+            max-width: 71%;
         }
+    //le bouton validate dans les cards restaurant//
         &--validate {
             display: flex;
             align-items: center;
@@ -520,31 +513,9 @@ h1{
             transform-origin: right 50%;    
             margin-top:-2.9rem;             
         }
-    //animation//
 }   
 
-@keyframes turn {
-    0% {
-        transform: rotate(0);
-    }
-    50% {
-        transform: rotate(180deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-/*.menu__card {
-  transform: scaleX(0);
-  transition: transform 1500ms;
-
-    &:active {
-        transform-origin: left;
-        transform: scaleX(0.2);
-        background-color: $color__green--light;
-    }
-} 
-*/                   
+                  
 
 
     
