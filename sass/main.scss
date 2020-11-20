@@ -379,8 +379,9 @@ h1{
         height: 1.3rem;
         top: 0.8rem;
         left:1.6rem;
-    }    
+    }
 }
+
 .container__menu {
     border: 1px solid transparent;
     width: 100%;
@@ -390,6 +391,34 @@ h1{
             object-fit: cover;
             max-height: 20rem;
         }
+    //insertion des deux coeurs l un sur l autre apres le titre//
+        .far {
+            float:right;
+            position: relative;
+            color: $color__dark--medium;
+            right: 1.5rem;
+            z-index:5;
+            opacity:1;
+            &:hover {
+                opacity: 0;
+                z-index: 1;
+            }
+        }
+        .fas {
+            float: right;
+            position: relative;
+            opacity:0;
+            z-index: 1;
+            left: 1.3rem;
+            transition: all scale(1);
+            &:hover {
+                transform: scale(1.05);
+                animation: progress--heart 500ms;
+                opacity:1;
+                z-index: 5;
+                color: #9327ec;
+        }
+    }
 }
 // nom du restaurant en haut du menu//
 .menu {  
@@ -421,22 +450,22 @@ h1{
         & h3 {
             color: $color__dark--dark;
             padding-left: 0.6vh;   
-                &::after{
-                    content: " ______ ";
-                    display: block; 
-                    position: relative;
-                    color: $color__green--light;
-                    bottom: 0.5rem;
-                    font-weight: bold;
-                }
-                &::before{
-                    content: " ______ ";
-                    display: block; 
-                    position: relative;
-                    color: $color__green--light;
-                    bottom: 0.5rem;
-                    top: 2rem;
-                }
+            &::after{
+                content: " ______ ";
+                display: block; 
+                position: relative;
+                color: $color__green--light;
+                bottom: 0.5rem;
+                font-weight: bold;
+            }
+            &::before{
+                content: " ______ ";
+                display: block; 
+                position: relative;
+                color: $color__green--light;
+                bottom: 0.5rem;
+                top: 2rem;
+            }
         }
         & .btn {
             margin-top: 2rem;
@@ -529,7 +558,7 @@ h1{
        }
     }   
 }   
-
+//animation pour faire apparaitre en douceur le menu//
 .menu__starter {
     animation: appear 800ms;
     -webkit-transition-timing-function: ease;
