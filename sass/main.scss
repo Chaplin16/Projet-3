@@ -96,20 +96,20 @@ h1{
     display: flex;
     flex-direction: column;
     height: 15.5rem;
-        &__presentation  p {
-            font-size: 0.9rem;
-            color: $color__dark--medium;
-            text-align: center;
-            padding-bottom: 1.4rem;
-        }
-        &__presentation--titre {
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-align: center;
-            padding-top: 1.5rem;
-            padding-bottom: 0.5rem;
-            line-height: 1.4rem;
-        }
+    &__presentation  p {
+        font-size: 0.9rem;
+        color: $color__dark--medium;
+        text-align: center;
+        padding-bottom: 1.4rem;
+    }
+    &__presentation--titre {
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-align: center;
+        padding-top: 1.5rem;
+        padding-bottom: 0.5rem;
+        line-height: 1.4rem;
+    }
 }
 
 .input_formulaire {
@@ -135,11 +135,11 @@ h1{
     background: $color__gradient;
     box-shadow: 1px 1px 8px 1px $color__dark--medium;
     transition: all 300ms;
-        &:hover { 
-            transform: scale(1.01);
-            opacity: 0.85;
-            box-shadow: 2px 2px 9px 2px $color__dark--top;
-        }
+    &:hover { 
+        transform: scale(1.01);
+        opacity: 0.85;
+        box-shadow: 2px 2px 9px 2px $color__dark--top;
+    }
 }
 //partie deuxieme bloc: fonctionnement//
 .work {
@@ -147,73 +147,73 @@ h1{
     flex-direction: column;
     height: 20rem;
     margin-top: 1.7rem;
-        .work__btn {
-            display: flex;            
-            flex-direction: column;
-            width: 100%;
-            justify-content: space-between;
-                &--1,
-                &--2,
-                &--3 {
-                    padding-top: 1.3rem;
-                    padding-bottom: 1.2rem;
-                    margin: 0.8rem 1.7rem 0.5rem 1.2rem;
-                    border-radius: 20px;
-                    border: none;
-                    box-shadow: 1.5px 1px 8px 1px $color__dark--light;
-                    font-size: 0.9rem;
-                    font-weight: bold;
-                    font-family: "roboto";
-                    counter-reset: compteListe;
-                    position: relative;
-                    transition: 300ms;
-                // insertion des icones des " boutons du fonctionnement//
-                        i {
-                            float:left;
-                            padding-left: 15%;
-                            opacity: 0.5; 
-                            font-size: 1.2rem;
-                        }
-                //insertion de la couleur de fond des boutons de fonctionnement
-                        &:hover {
-                            background-color: lighten($color__purple, 31);
-                            z-index: 1;
-                                i {
-                                    color: $color__purple;
-                                    opacity:1;
-                                    z-index: 5;
-                                }
-                        }
+    &__btn {
+        display: flex;            
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        &--1,
+        &--2,
+        &--3 {
+            padding-top: 1.3rem;
+            padding-bottom: 1.2rem;
+            margin: 0.8rem 1.7rem 0.5rem 1.2rem;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 1.5px 1px 8px 1px $color__dark--light;
+            font-size: 0.9rem;
+            font-weight: bold;
+            font-family: "roboto";
+            counter-reset: compteListe;
+            position: relative;
+            transition: 300ms;
+        // insertion des icones des " boutons du fonctionnement//
+            i {
+                float:left;
+                padding-left: 15%;
+                opacity: 0.5; 
+                font-size: 1.2rem;
+            }
+        //insertion de la couleur de fond des boutons de fonctionnement
+            &:hover {
+                background-color: lighten($color__purple, 31);
+                z-index: 1;
+                i {
+                    color: $color__purple;
+                    opacity:1;
+                    z-index: 5;
                 }
-                &--2 span,
-                &--3 span {
-                    margin-right: 1.8rem;
-                }
-                // insertion des ronds numerotés sur les 3 boutons de fonctionnement//
-                &--1::after,
-                &--2::after,
-                &--3::after {
-                    counter-increment: compteListe 1;
-                    content: counter(compteListe) " ";
-                    display: block;
-                    position: absolute; 
-                    background-color: #8d51ee;
-                    font-size: 0.8rem;
-                    font-weight: bold;
-                    color: $color__white;
-                    border-radius: 15px;
-                    width: 3vh;
-                    height:3vh;
-                    left:-0.5rem;
-                    bottom:1.1rem;
-                    line-height: 1.4rem;
-                }
-                &--2::after {
-                    counter-increment: compteListe 2;             
-                }
-                &--3::after {
-                    counter-increment: compteListe 3;
-                }        
+            }
+        }
+        &--2 span,
+        &--3 span {
+            margin-right: 1.8rem;
+        }
+    // insertion des ronds numerotés sur les 3 boutons de fonctionnement//
+        &--1::after,
+        &--2::after,
+        &--3::after {
+            counter-increment: compteListe 1;
+            content: counter(compteListe) " ";
+            display: block;
+            position: absolute; 
+            background-color: #8d51ee;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: $color__white;
+            border-radius: 15px;
+            width: 3vh;
+            height:3vh;
+            left:-0.5rem;
+            bottom:1.1rem;
+            line-height: 1.4rem;
+        }
+         &--2::after {
+            counter-increment: compteListe 2;             
+        }
+        &--3::after {
+            counter-increment: compteListe 3;
+        }        
         }
 }     
 
@@ -234,96 +234,96 @@ h1{
     border : 1px solid $color__bg--light;
     background-color: $color__bg--light;
     position: relative;
-        &__title {
-            padding-bottom: 1.3rem;
-            padding-top: 2.5rem;
-        }   
-        &__card {
-            width: 90%;
-            margin-bottom: 1.2rem;
-            padding-bottom: 0rem;
-            margin-bottom:1.5rem;
-            margin-right: 2%;
-            margin-left: 5%;
-            background-color: $color__white;
-            box-shadow: 2px 1px 9px 1px $color__dark--light;
-            border-radius: 15px;
-            line-height: 0.9rem;
-        //insertion  des 2 mots encadrés "nouveau" sur les 2 premieres images de restaurant//
-                &:nth-of-type(1)::after,
-                &:nth-of-type(2)::after {
-                    content:" Nouveau ";
-                    float: right;
-                    position: relative;
-                    background-color: $color__green--light;
-                    color:$color__green--dark;
-                    text-align: center;
-                    font-weight: bold;
-                    line-height: 1.8rem;
-                    font-size: 1rem;
-                    width: 5.5rem;
-                    height: 1.8rem;                       
-                    clear:right;
-                    bottom: 13rem;
-                    right: 0.6rem;
-                } 
-                &:nth-of-type(1),
-                &:nth-of-type(2) { 
-                    height: 14rem;
-                }             
-                img {
-                    width: 100%;
-                    height: 9.5rem;
-                    object-fit: cover;
-                    border-top-left-radius: 15px;
-                    border-top-right-radius: 15px;
-                }            
-                &--name {
-                    text-decoration: none;
-                    color: black;
-                    font-weight: bold;
-                    padding-left: 0.8rem;
-                    padding-top: 1rem;
-                }
-                &--place {
-                    text-decoration: none;
-                    color: $color__dark--dark;
-                    font-size: 0.95rem;
-                    padding-left:0.8rem;
-                    padding-top: 0.6rem;
-                }
-        // insertion du coeur à droite du nom du restaurant//
-                .far {
-                    float: right;
-                    position: relative;
-                    bottom: 2.3rem;
-                    right: 2rem;
-                    opacity:1;
-                    z-index: 5;
-                    color: $color__dark--medium;
-                    &:hover {
-                        opacity: 0;
-                        z-index: 1;
-                    }
-                }    
-                .fas {
-                    opacity:0;
-                    float: right;
-                    position: relative;
-                    z-index: 1;
-                    bottom: 2.3rem;
-                    right: 0rem; 
-                    transition: all scale(1);
-                    &:hover {
-                        transform: scale(1.05);
-                        animation: progress--heart 500ms;
-                        opacity:1;
-                        z-index: 5;
-                        color: #9327ec;
-                    }
-                }
-                }                     
+    &__title {
+        padding-bottom: 1.3rem;
+        padding-top: 2.5rem;
+    }   
+    &__card {
+        width: 90%;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0rem;
+        margin-bottom:1.5rem;
+        margin-right: 2%;
+        margin-left: 5%;
+        background-color: $color__white;
+        box-shadow: 2px 1px 9px 1px $color__dark--light;
+        border-radius: 15px;
+        line-height: 0.9rem;
+    //insertion  des 2 mots encadrés "nouveau" sur les 2 premieres images de restaurant//
+        &:nth-of-type(1)::after,
+        &:nth-of-type(2)::after {
+            content:" Nouveau ";
+            float: right;
+            position: relative;
+            background-color: $color__green--light;
+            color:$color__green--dark;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.8rem;
+            font-size: 1rem;
+            width: 5.5rem;
+            height: 1.8rem;                       
+            clear:right;
+            bottom: 13rem;
+            right: 0.6rem;
+        } 
+        &:nth-of-type(1),
+        &:nth-of-type(2) { 
+            height: 14rem;
+        }             
+        img {
+            width: 100%;
+            height: 9.5rem;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }            
+        &--name {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding-left: 0.8rem;
+            padding-top: 1rem;
+        }
+        &--place {
+            text-decoration: none;
+            color: $color__dark--dark;
+            font-size: 0.95rem;
+            padding-left:0.8rem;
+            padding-top: 0.6rem;
+        }
+    // insertion du coeur à droite du nom du restaurant//
+        .far {
+            float: right;
+            position: relative;
+            bottom: 2.3rem;
+            right: 2rem;
+            opacity:1;
+            z-index: 5;
+            color: $color__dark--medium;
+            &:hover {
+                opacity: 0;
+                z-index: 1;
+            }
         }    
+        .fas {
+            opacity:0;
+            float: right;
+            position: relative;
+            z-index: 1;
+            bottom: 2.3rem;
+            right: 0rem; 
+            transition: all scale(1);
+            &:hover {
+                transform: scale(1.05);
+                animation: progress--heart 500ms;
+                opacity:1;
+                z-index: 5;
+                color: #9327ec;
+            }
+        }
+    }                     
+}    
 //bas de page//
 .footer {
     padding-left: 2rem;
@@ -332,23 +332,23 @@ h1{
     background-color: rgba(0, 0, 0, 0.8);
     color: $color__white;
     z-index: 1;
-        a{
+    a{
         color: $color__white;
-        }
-        ul {
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            line-height: 1.5rem;
-                li:first-child{ 
-                    i {
-                        padding-right:1rem;
-                    }
-               }
-               li:nth-of-type(2){
-                   i {
-                       padding-right: 0.6rem;
-                   }
-               }
+    }
+    ul {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+            li:first-child{ 
+                i {
+                    padding-right:1rem;
+                }
+            }
+            li:nth-of-type(2){
+                i {
+                   padding-right: 0.6rem;
+                }
+            }
         }      
 }
 //_________________________________________________________//
@@ -436,86 +436,76 @@ h1{
 //la liste des plats dans le menu//
 .menu__card {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 100%;
-    line-height: 1.2rem;;
+    position: relative;
+    cursor: pointer;
     margin-bottom: 0.5rem;
     margin-top:0.5rem;
-    padding-left: 0.2rem;
+    margin-left: -0.2rem;
+    padding-left: 0.5rem;
     border-radius: 12px;
     background-color: $color__white; 
     opacity:1;
     overflow: hidden;
-    position: relative;
 //apparition de la partie verte/check-validation du plat//   
-        &:hover .menu__card--validate {
-            opacity: 1;
-            transform: scaleX(1);
-            animation: card--validate;
-               > .fa-check-circle {
-                        animation: turn 1s linear 2;
-               }
-        }      
-        .menu__card--price-check {
-            display: flex;
-            justify-content: flex-end;
-            height: 100%;
+    &:hover .menu__card--validate {
+        width: 18%;
+        opacity: 1;
+        transform: scaleX(1);
+        animation: card--validate;
+        > .fa-check-circle {
+            animation: turn 1s linear 1;
         }
-        a{
-            width: 100%;
-            height: 100%;
-        } 
-    //le prix//  
-        span {
-            position: relative; 
-            height: auto;
-            bottom:1.3rem;
-            color: $color__dark--dark;
-            font-weight: bold;
-            transition: transform 800ms;
-        }
-    //deplacement du prix lors de la validation du plat//
-        &:hover {
-            span {
-            transform: translateX(-0.9rem);
-            opacity: 1;   
-            }       
-        }
-        h4 {
-           color: $color__dark--top;
-           white-space: nowrap;
-           font-size: 1rem;
-           font-weight: bold;
-           padding-left: 1vh;
-           max-width: 80%;
-           margin-top: 0.5rem;
-        }
-        p { 
-            font-size: 0.9rem;
-            color: $color__dark--dark;
-            padding-left: 1vh;
-            max-width: 71%;
-        }
-    //le bouton validate dans les cards restaurant//
-        &--validate {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3rem;
-            height:100%;
-            background-color: $color__green--light;
-            color: $color__white;
-            opacity: 1;
-            border-radius: 0 12px 12px 0;
-            transform: scaleX(0);
-            transition: transform 800ms;
-            transform-origin: right 50%;    
-            margin-top:-2.9rem;             
-        }
-}   
+    } 
+    &--validate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color__green--light;
+        color: $color__white;
+        opacity: 1;
+        border-radius: 0 12px 12px 0;
+        transform: scaleX(0);
+        transition: transform 800ms ease-in-out;
+        transform-origin: right 50%;                        
+    }       
+    &--name {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 30px;
+        grid-template-columns: auto auto;
+        grid-template-areas: 
+        "text1 ."
+        "text2 price";
+        p {
+            display: block;
+            &:nth-child(1) {
+                grid-area: text1;
+                font-weight: 700;
+                padding-top:0.5rem;
 
-                  
+            }
+            &:nth-child(2) {
+                grid-area: text2;
+                font-weight: 200;
+                color: $color__dark--dark;
+                padding-bottom:0.6rem;
+                padding-top:0.3rem;
+            }
+            &:nth-child(3) {
+                grid-area: price;
+                display: flex;
+                justify-content: flex-end;
+                color: $color__dark--dark;
+                font-weight: bold;    
+            }
+       }
+    }   
+}   
+   //le bouton validate dans les cards restaurant//
+
+ 
+
+                 
 
 
     
