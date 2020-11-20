@@ -401,6 +401,33 @@ h1 {
   object-fit: cover;
   max-height: 20rem;
 }
+.container__menu .far {
+  float: right;
+  position: relative;
+  color: rgba(0, 0, 0, 0.5);
+  right: 1.5rem;
+  z-index: 5;
+  opacity: 1;
+}
+.container__menu .far:hover {
+  opacity: 0;
+  z-index: 1;
+}
+.container__menu .fas {
+  float: right;
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+  left: 1.3rem;
+  transition: all scale(1);
+}
+.container__menu .fas:hover {
+  transform: scale(1.05);
+  animation: progress--heart 500ms;
+  opacity: 1;
+  z-index: 5;
+  color: #9327ec;
+}
 
 .menu {
   display: flex;
