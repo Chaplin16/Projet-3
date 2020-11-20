@@ -53,6 +53,18 @@ $color__gradient: linear-gradient(#e76ce7,#a37cfd);
         transform: rotate(360deg);
     }
 }
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 :root {
     font-family: "roboto","sans-serif";
@@ -445,12 +457,13 @@ h1{
     border-radius: 12px;
     background-color: $color__white; 
     opacity:1;
-    overflow: hidden;
+
 //apparition de la partie verte/check-validation du plat//   
     &:hover .menu__card--validate {
         width: 18%;
         opacity: 1;
         transform: scaleX(1);
+        font-size: 1.5rem;
         animation: card--validate;
         > .fa-check-circle {
             animation: turn 1s linear 1;
@@ -471,8 +484,10 @@ h1{
     &--name {
         width: 100%;
         display: grid;
-        grid-template-rows: 30px;
+        grid-template-rows: 1.6rem;
         grid-template-columns: auto auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
         grid-template-areas: 
         "text1 ."
         "text2 price";
@@ -480,9 +495,12 @@ h1{
             display: block;
             &:nth-child(1) {
                 grid-area: text1;
-                font-weight: 700;
+                font-weight: bold;
                 padding-top:0.5rem;
-
+                color:$color__dark--top;    
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
             &:nth-child(2) {
                 grid-area: text2;
@@ -490,24 +508,44 @@ h1{
                 color: $color__dark--dark;
                 padding-bottom:0.6rem;
                 padding-top:0.3rem;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
             &:nth-child(3) {
                 grid-area: price;
                 display: flex;
+                padding-left: 0.7rem;
+                padding-right: 0.5rem;
                 justify-content: flex-end;
                 color: $color__dark--dark;
-                font-weight: bold;    
+                font-weight: bold;
+                transition: transform 4s;
+                &:hover {
+                    transform: translateX(3rem) 2s;
+                    
+                }    
             }
        }
     }   
 }   
-   //le bouton validate dans les cards restaurant//
 
+.menu__starter {
+    animation: appear 800ms;
+    -webkit-transition-timing-function: ease;
+}
  
+.menu__main-course {
+    animation: appear 800ms;
+    -webkit-transition-delay: 2s;
+    -moz-transition-delay: 2s;
+}
+.menu__dessert {
+    animation: appear 800ms ease-in-out;
+    -webkit-transition-delay: 3s;
+    -moz-transition-delay: 3s;
 
-                 
-
-
-    
+     
+}
 
 
