@@ -181,7 +181,7 @@ h1 {
 }
 .btn:hover {
   transform: scale(1.01);
-  opacity: 0.85;
+  background: linear-gradient(to top, #cf82cf, #a387e4);
   box-shadow: 2px 2px 9px 2px rgba(0, 0, 0, 0.9);
 }
 
@@ -504,14 +504,16 @@ h1 {
 .menu__card:hover .menu__card--validate, .menu__card:active .menu__card--validate {
   width: 18%;
   opacity: 1;
-  transform: scaleX(1);
+  transform: scaleX(1.05);
   font-size: 1.5rem;
-  animation: card--validate;
+  animation: card--validate 1500ms;
 }
 .menu__card:hover .menu__card--validate > .fa-check-circle, .menu__card:active .menu__card--validate > .fa-check-circle {
-  animation: turn 1s linear backwards;
+  animation: turn 0.5s linear;
   right: 0;
+  left: 0;
   opacity: 1;
+  color: #FFF;
 }
 .menu__card--validate {
   display: flex;
@@ -522,7 +524,7 @@ h1 {
   opacity: 1;
   border-radius: 0 12px 12px 0;
   transform: scaleX(0);
-  transition: transform 1500ms;
+  transition: transform 2000ms ease;
   transform-origin: right 50%;
 }
 .menu__card--name {
@@ -558,11 +560,14 @@ h1 {
   padding-right: 0.5rem;
   color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
+  -webkit-transform: translateX(0) 4s;
+  -moz-transform: translateX(0) 4s;
   -webkit-transition: transform 4s;
   -moz-transition: transform 4s;
 }
 .menu__card--name p:nth-child(3):hover, .menu__card--name p:nth-child(3):active {
-  transform: translateX(10px) ease-in-out;
+  -webkit-transform: translateX(10px) ease-in-out 4s;
+  -moz-transform: translateX(10px) ease-in-out 4s;
 }
 
 .menu__starter {
@@ -572,14 +577,14 @@ h1 {
 
 .menu__main-course {
   animation: appear 800ms;
-  -webkit-transition-delay: 2s;
-  -moz-transition-delay: 2s;
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
 }
 
 .menu__dessert {
   animation: appear 800ms ease-in-out;
-  -webkit-transition-delay: 3s;
-  -moz-transition-delay: 3s;
+  -webkit-transition-delay: 1.8s;
+  -moz-transition-delay: 1.8s;
 }
 
 /*# sourceMappingURL=style.css.map */
