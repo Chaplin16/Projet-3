@@ -177,7 +177,7 @@ h1{
     justify-content: space-between;
     width: 100%;
 }
-/*
+
 //loading--spinner//
 .box__loading-spinner {
     display: flex;
@@ -304,7 +304,7 @@ h1{
     bottom: -0.3rem;
     left: 6.8rem;
 }
-*/
+
 //partie : premier bloc du haut//
 .location {
     background-color: $color__bg--light;
@@ -841,23 +841,26 @@ h1 {
         padding-left: 3rem;
     }
     &__btn {
-    &--1,
-    &--2,
-    &--3 {
-
-        right:13%;
-    }
-    i {
-        margin-top:0;
-    }
-    span {
-        max-width: 12rem;
-    }
-    &--1::after,
-    &--2::after, 
-    &--3::after {
-        bottom: 1.2rem;
-    }
+        &--1,
+        &--2,
+        &--3 {
+            right:12%;
+            min-width:33%;
+            margin-top: 3.5rem;
+        }
+        i {
+            margin-top:0;
+            padding-left:10%;
+            padding-right: 0.5rem;
+        }
+        span {
+            max-width: 12rem;
+        }
+        &--1::after,
+        &--2::after, 
+        &--3::after {
+            bottom: 1.2rem;
+        }
     }
 }
 
@@ -881,11 +884,92 @@ h1 {
     }
 }
 .footer {
-    padding-left: 3.3rem;
+    padding-bottom:4rem;
+    h5 {
+        padding-left: 2.5rem;
+        padding-bottom: 1rem;
+    }
+    ul {
+        padding-left: 1rem;;
+        display: flex;
+        justify-content: space-around;
+        max-width: 90%;
+    }
 }
 
 }   
-
+//responsive pour grand ecran//
 @media all and (min-width:1199px) {
+.container,
+.footer {
+    width:90%;
+    margin:auto;
+}
+
+.work {
+    &__btn {
+        max-width: 90%;
+        &--1,
+        &--2,
+        &--3 {
+            right: 12%;
+            margin-top:3.5rem;
+            min-width: 15rem;
+        }
+        i {
+            margin-left: 2%;
+        }
+    }
+}
+
+.location, 
+.restaurant,
+.footer {
+    border-radius: 15px;
+}
+.input_formulaire {
+    border-radius: 15px 15px 0 0;
+}
+.footer {
+    margin-top: 2rem;
+}
+}
+
+//responsive pour tres grand ecran//
+@media all and (min-width:1499px) {
+.work {
+    &__btn {
+        max-width: 90%;
+        &--1,
+        &--2,
+        &--3 {
+            right: 8%;
+            margin-top:3.5rem;
+            min-width: 15rem;
+        }
+    }
+}
+
+.restaurant {
+    column-gap: 5rem;
+    row-gap: 3.5rem;
+    padding-bottom: 4rem;
+    &__card {
+        max-width: 38%;
+        height: 17rem;
+        img {
+            height:12rem;
+        }
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+            height: 17rem;
+        }
+        &::after {
+            top: -16rem;
+            margin-right: 2rem;
+            line-height: 5px;
+        }
+    } 
+}
 
 }
