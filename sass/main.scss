@@ -164,7 +164,7 @@ h1{
     padding-bottom: 0.5rem;
     color: $color__dark--top;
 }
-/*
+
 //loading--spinner//
 .box__loading-spinner {
     display: flex;
@@ -184,8 +184,8 @@ h1{
 
 .dishes {
     position: relative;
-    top:60%;
-    left: 4rem;
+    top:55%;
+    left: 4.5rem;
     align-self: center;
     .fas {
         font-size: 8rem;
@@ -199,8 +199,8 @@ h1{
     height: 70%;
     border-radius: 50%;
     position: relative;
-    left:10%;
-    bottom: 20%;
+    left:9%;
+    bottom: 18%;
 
 }
 
@@ -293,7 +293,6 @@ h1{
     bottom: -0.3rem;
     left: 6.8rem;
 }
-*/
 //partie : premier bloc du haut//
 .location__mappy {
     background-color:  $color__bg--dusky;
@@ -351,14 +350,13 @@ h1{
     &__btn {
         display: flex;            
         flex-direction: column;
-        width: 98%;
         row-gap: 1.5rem;
         counter-reset: compteListe;
         &--1,
         &--2,
         &--3 {
             padding: 1.2rem 0;
-            margin: 0 1.7rem;
+            margin: 0 2rem;
             border-radius: 20px;
             border: none;
             box-shadow: 1.5px 1px 8px 1px $color__dark--light;
@@ -399,11 +397,10 @@ h1{
             font-weight: bold;
             color: $color__white;
             border-radius: 15px;
-            width: 4vh;
-            height:4vh;
+            width: 3vh;
+            height: 3vh;
             left:-0.8rem;
             bottom:1.1rem;
-            line-height: 1.2rem;
         }
     }  
 }
@@ -755,8 +752,8 @@ h1{
 .work {
     display: flex;
     flex-wrap: wrap;
-    height: 9rem;
-    margin-top: 0;
+    height: 8rem;
+    margin-bottom: 2rem;
     &__btn{
         flex-direction: row;
         max-width: 90%;
@@ -771,13 +768,17 @@ h1{
             margin: 0;
             padding: 1rem;
             & i {
-                padding-left: 0;
+                padding-left: 0.3rem;
                 margin-right: 0.3rem;
             }
+            &:after {
+                bottom: 1.4rem;
+            }
+            p {
+            margin-right: 0;            
+            }
         }
-        p {
-        margin-right: 0;            
-        }
+        
     }
 }
 //responsive menu restaurant pour ordinateur//
@@ -829,27 +830,15 @@ h1{
 .work {
     &__title {
         padding-left: 3rem;
+        width: 100%;
     }
     &__btn {
-        &--1,
-        &--2,
-        &--3 {
-            right:12%;
-            min-width:33%;
-            margin-top: 3.5rem;
-        }
+        max-width: 85%;
         i {
-            margin-top:0;
             padding-left:10%;
-            padding-right: 0.5rem;
         }
         p {
             max-width: 12rem;
-        }
-        &--1::after,
-        &--2::after, 
-        &--3::after {
-            bottom: 1.2rem;
         }
     }
 }
@@ -859,7 +848,7 @@ h1{
     column-gap: 3rem;
     row-gap: 2.5rem;
     &__title {
-        width:100%;
+        width: 100%;
         padding-bottom: 0;
         margin-left:1.5rem;
     }
@@ -887,18 +876,16 @@ h1{
 }
 .work {
     &__btn {
-        max-width: 90%;
-        &--1,
-        &--2,
-        &--3 {
-            right: 12%;
-            margin-top:3.5rem;
-            min-width: 15rem;
-        }
         i {
             margin-left: 2%;
         }
     }
+}
+.work__title,
+.restaurant__title {
+    text-align: center;
+    padding-left: 0;
+    margin-left: 0;
 }
 .location, 
 .restaurant,
@@ -912,24 +899,12 @@ h1{
 }
 
 //responsive pour tres grand ecran//
-@media all and (min-width:1499px) {
+@media all and (min-width:1350px) {
 .box__circle{
     left: 33%;
 }
-.work {
-    &__btn {
-        max-width: 90%;
-        &--1,
-        &--2,
-        &--3 {
-            right: 8%;
-            margin-top:3.5rem;
-            min-width: 15rem;
-        }
-    }
-}
+
 .restaurant {
-    column-gap: 5rem;
     row-gap: 3.5rem;
     padding-bottom: 4rem;
     &__card {
