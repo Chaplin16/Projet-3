@@ -28,7 +28,6 @@ $color__gradient--light: linear-gradient(to top,rgb(207, 130, 207),rgb(163, 135,
     }
     100% {
         background-color: 100%;
-        color: $color__gradient;
         opacity: 1;
     }
 }
@@ -143,7 +142,6 @@ $color__gradient--light: linear-gradient(to top,rgb(207, 130, 207),rgb(163, 135,
 :root {
     font-family: "roboto";
     font-size: 1.3rem;
-    font-weight: 400;
 }
 
 body {
@@ -166,7 +164,7 @@ h1{
     padding-bottom: 0.5rem;
     color: $color__dark--top;
 }
-
+/*
 //loading--spinner//
 .box__loading-spinner {
     display: flex;
@@ -295,7 +293,7 @@ h1{
     bottom: -0.3rem;
     left: 6.8rem;
 }
-
+*/
 //partie : premier bloc du haut//
 .location__mappy {
     background-color:  $color__bg--dusky;
@@ -319,69 +317,62 @@ h1{
     flex-direction: column;
     align-items: center;
     row-gap: 1.5rem;
+    text-align: center;
     &__presentation--titre{
         font-size: 1.4rem;
-        font-weight: bold;
-        text-align: center;
+        font-weight: bold;    
     }
     & p {
         font-size: 0.9rem;
         color: $color__dark--medium;
     }
-    .btn {
-        margin: auto;
-        padding: 0.8rem 1.3rem;
-        border-radius: 60px;
-        color: $color__white;
-        font-weight: bold;
-        border: none;
-        background: $color__gradient;
-        box-shadow: 1px 1px 8px 1px $color__dark--medium;
-        transition: all 300ms;
-        &:hover { 
-            transform: scale(1.01);
-            background: $color__gradient--light;
-            box-shadow: 4px 4px 5px $color__dark--top;
-        }
+}
+.btn {
+    margin: auto;
+    padding: 0.8rem 1.3rem;
+    border-radius: 60px;
+    color: $color__white;
+    font-weight: bold;
+    border: none;
+    background: $color__gradient;
+    box-shadow: 1px 1px 8px 1px $color__dark--medium;
+    transition: all 300ms;
+    &:hover { 
+        transform: scale(1.01);
+         background: $color__gradient--light;
+         box-shadow: 4px 4px 5px $color__dark--top;
     }
 }
 
 //partie deuxieme bloc: fonctionnement//
 .work {
-    display: flex; 
-    flex-direction: column;
     height: 20rem;
     margin-top: 1.7rem;
-
     &__btn {
         display: flex;            
         flex-direction: column;
         width: 98%;
-        justify-content: space-between;
+        row-gap: 1.5rem;
+        counter-reset: compteListe;
         &--1,
         &--2,
         &--3 {
-            padding-top: 1.3rem;
-            padding-bottom: 1.2rem;
-            margin: 0.8rem 1.7rem 0.5rem 2.2rem;
+            padding: 1.2rem 0;
+            margin: 0 1.7rem;
             border-radius: 20px;
             border: none;
             box-shadow: 1.5px 1px 8px 1px $color__dark--light;
             font-size: 0.9rem;
             font-weight: bold;
-            font-family: "roboto";
-            counter-reset: compteListe;
             position: relative;
             transition: 300ms;
-        // insertion des icones des " boutons du fonctionnement//
-            i {
+            i { // insertion des icones des " boutons du fonctionnement//
                 float:left;
                 padding-left: 15%;
                 opacity: 0.5; 
                 font-size: 1.2rem;
             }
-        //insertion de la couleur de fond des boutons de fonctionnement
-            &:hover {
+            &:hover {//insertion de la couleur de fond des boutons de fonctionnement//
                 box-shadow: 5px 5px 5px $color__dark--top;
                 background-color: lighten($color__purple, 31);
                 z-index: 1;
@@ -392,78 +383,66 @@ h1{
                 }
             }
         }
-        &--2 span,
-        &--3 span {
+        &--2 p,
+        &--3 p {
             margin-right: 1.8rem;
         }
     // insertion des ronds numerotés sur les 3 boutons de fonctionnement//
         &--1::after,
         &--2::after,
         &--3::after {
-            counter-increment: compteListe 1;
+            counter-increment: compteListe;
             content: counter(compteListe) " ";
-            display: block;
             position: absolute; 
             background-color: #8d51ee;
             font-size: 0.8rem;
             font-weight: bold;
             color: $color__white;
             border-radius: 15px;
-            width: 3vh;
-            height:3vh;
-            left:-0.5rem;
+            width: 4vh;
+            height:4vh;
+            left:-0.8rem;
             bottom:1.1rem;
-            line-height: 1.4rem;
+            line-height: 1.2rem;
         }
-         &--2::after {
-            counter-increment: compteListe 2;             
-        }
-        &--3::after {
-            counter-increment: compteListe 3;
-        }        
-        }
-}     
+    }  
+}
 
 .work__title,
 .restaurant__title {
     font-weight: bold;
-    padding-left: 1.7rem;
+    padding-left: 1rem;
     font-size: 1.35rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1.5rem;
 }
 //partie troisieme bloc: restaurant//
 .restaurant {
     display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
     flex-wrap: wrap;
     padding-bottom: 2.5rem;
     border : 1px solid $color__bg--light;
     background-color: $color__bg--light;
-    position: relative;
     &__title {
-        padding-bottom: 1.3rem;
         padding-top: 2.5rem;
     }   
     &__card {
-        width: 90%;
-        padding-bottom: 0rem;
-        margin: 0 3% 1.5rem 5%;
+        width: 88%;
+        height:14rem;
+        margin: auto;
+        margin-bottom:1.5rem;
         background-color: $color__white;
         box-shadow: 2px 1px 9px 1px $color__dark--light;
         border-radius: 15px;
-        line-height: 0.9rem;
+        overflow: hidden;
         -webkit-transition: all 300ms;
         -moz-transition: all 300ms;
-    //zoom et ombre sur les cards de restaurants//    
-        &:hover {
+        &:hover {//zoom et ombre sur les cards de restaurants//    
             box-shadow: 5px 5px 5px $color__dark--top;
             -webkit-transform: scale(1.025);
             -moz-transform: scale(1.025)
         }
-    //insertion  des 2 mots encadrés "nouveau" sur les 2 premieres images de restaurant//
         &:nth-of-type(1)::after,
-        &:nth-of-type(2)::after {
+        &:nth-of-type(2)::after {//insertion  des encadrés "nouveau"//
             content:" Nouveau ";
             float: right;
             position: relative;
@@ -472,43 +451,34 @@ h1{
             text-align: center;
             font-weight: bold;
             line-height: 1.8rem;
-            font-size: 1rem;
-            width: 5.5rem;
-            height: 1.8rem;                       
+            width: 5.5rem;                    
             clear:right;
-            bottom: 13rem;
+            bottom: 14rem;
             right: 0.6rem;
-        } 
-        &:nth-of-type(1),
-        &:nth-of-type(2) { 
-            height: 14rem;
-        }             
+        }            
         img {
             width: 100%;
             height: 9.5rem;
             object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }            
-        &--name {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            padding-left: 0.8rem;
-            padding-top: 1rem;
         }
+        &--name,
         &--place {
-            text-decoration: none;
-            color: $color__dark--dark;
-            font-size: 0.95rem;
+            color:$color__dark--top;
             padding-left:0.8rem;
             padding-top: 0.6rem;
+        }            
+        &--name {
+            font-weight: bold;
         }
-    // insertion du coeur à droite du nom du restaurant//
-        .far {
+        &--place {
+            opacity: 0.8;           
+        }
+        & i {// insertion du coeur à droite du nom du restaurant//
             float: right;
-            position: relative;
+            position: relative; 
             bottom: 2.3rem;
+        }
+        .far {
             right: 2rem;
             opacity:1;
             z-index: 5;
@@ -519,58 +489,50 @@ h1{
             }
         }    
         .fas {
-            opacity:0;
-            float: right;
-            position: relative;
-            z-index: 1;
-            bottom: 2.3rem;
             right: 0rem; 
+            opacity:0;
+            z-index: 1; 
             transition: all scale(1);
             &:hover {
                 transform: scale(1.05);
                 animation: progress--heart 500ms;
                 opacity:1;
                 z-index: 5;
-                color: #9327ec;
-            }
+                color: $color__purple;
+            }   
         }
     }                     
 }    
 //bas de page//
 .footer {
-    padding-left: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding: 1rem 0 2rem 2rem;
     background-color: rgba(0, 0, 0, 0.8);
     color: $color__white;
     z-index: 1;
-    a{
+    a {
         color: $color__white;
-        -webkit-transition: 300ms;
-        -moz-transition: 300ms;
         &:hover {
             color: #e76ce7;
-            -webkit-transform: scale(1.2);
-            -moz-transform:scale(1.2);
-
         }
     }
     ul {
         margin-top: 0.5rem;
         font-size: 0.9rem;
         line-height: 1.5rem;
-            li:first-child{ 
-                i {
-                    padding-right:1rem;
-                }
+        li:first-child{ 
+            i {
+                padding-right:1rem;
             }
-            li:nth-of-type(2){
-                i {
-                   padding-right: 0.6rem;
-                }
+        }
+        li:nth-of-type(2){
+            i {
+               padding-right: 0.6rem;
             }
-    }      
-}
+        }
+    }
+}      
+
+
 //_________________________________________________________//
                     // menu du restaurant   //
 // insertion de la fleche de retour en haut à gauche//
@@ -589,7 +551,6 @@ h1{
         left:1.6rem;
     }
 }
-
 .container__menu {
     border: 1px solid transparent;
     display: flex; 
@@ -792,36 +753,30 @@ h1{
     left: 20%;
 }
 .work {
-    overflow:hidden;
-    flex-direction: row;
-    height: 10.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    height: 9rem;
+    margin-top: 0;
     &__btn{
         flex-direction: row;
-        align-items: baseline;
-        justify-content: space-around;
-        margin:0;
-        column-gap:1.5rem;
+        max-width: 90%;
+        column-gap: 1.5rem;
+        margin:auto;
+        margin-bottom: 1rem;
         &--1,
         &--2,
         &--3 {
-            margin:0;
-            margin-top: 8%;
-            right: 14%;
-            min-width: 35%;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 1rem;
+            & i {
+                padding-left: 0;
+                margin-right: 0.3rem;
+            }
         }
-        i {
-            margin-top: 0.3rem;
-            margin-right:0.4rem;
-        }
-        span {
-            display: inline-block;
-            margin:0;
-            max-width: 6rem;
-        }
-        &--1::after,
-        &--2::after,
-        &--3::after {
-            bottom: 1.65rem;
+        p {
+        margin-right: 0;            
         }
     }
 }
@@ -853,16 +808,14 @@ h1{
     border-radius: 50px;
 }
 .footer {
-    padding-bottom: 4rem;
+    padding-left: 0;
     h5 {
-        padding-left: 1.8rem;
-        padding-bottom: 1rem;
+    text-align: center;
+    margin-bottom:1rem;
     }
     ul {
-        padding-left: 1rem;;
         display: flex;
         justify-content: space-around;
-        max-width: 90%;
     }
 }
 
@@ -890,7 +843,7 @@ h1{
             padding-left:10%;
             padding-right: 0.5rem;
         }
-        span {
+        p {
             max-width: 12rem;
         }
         &--1::after,
