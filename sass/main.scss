@@ -131,8 +131,8 @@ $color__gradient--light: linear-gradient(to top,rgb(207, 130, 207),rgb(163, 135,
     }
     85% {
         opacity: 0.7;
-        background-color: #f3ccffde;
         background-size: contain;
+        background-color: #f3ccffde;
     }
     100% {
         height: 100%;
@@ -177,7 +177,7 @@ h1{
     justify-content: space-between;
     width: 100%;
 }
-/*
+
 //loading--spinner//
 .box__loading-spinner {
     display: flex;
@@ -187,23 +187,24 @@ h1{
     width: 100vw;
     height: 0;
     top: 0;
-    z-index: 5;
+    z-index: 10;
     animation: loading-spinner-apparence ease ;
     animation-iteration-count: 1;
-    animation-duration: 3.5s;
+    animation-duration: 4.2s;
     animation-fill-mode: backwards;
     overflow: hidden;
 }
 
 .dishes {
     position: relative;
-    top: 60%;
-    left:4.5rem;    
+    top:58%;
+    left: 4rem;
+    align-self: center;
     .fas {
         font-size: 8rem;
-        animation: rotation-dishes 2500ms 2 ease-in-out , change-color 3000ms ease-in-out ;  
+        animation: rotation-dishes 2500ms 2 ease-in-out, change-color 3500ms ease-in-out ;  
         animation-fill-mode: backwards;
-}
+    }
 }
 
 .box__circle {
@@ -211,8 +212,9 @@ h1{
     height: 70%;
     border-radius: 50%;
     position: relative;
-    top:-15%;
-    left:6%;
+    left:13%;
+    bottom: 15%;
+
 }
 
 .box__circle--point {
@@ -304,10 +306,11 @@ h1{
     bottom: -0.3rem;
     left: 6.8rem;
 }
-*/
+
 //partie : premier bloc du haut//
 .location {
     background-color: $color__bg--light;
+
     display: flex;
     flex-direction: column;
     height: 15.5rem;
@@ -342,9 +345,6 @@ h1{
     } 
 }
 
-    
-
-
 .btn {
     display: block;
     margin: auto;
@@ -361,7 +361,7 @@ h1{
     &:hover { 
         transform: scale(1.01);
         background: $color__gradient--light;
-        box-shadow: 2px 2px 9px 2px $color__dark--top;
+        box-shadow: 4px 4px 5px $color__dark--top;
     }
 }
 //partie deuxieme bloc: fonctionnement//
@@ -400,6 +400,7 @@ h1{
             }
         //insertion de la couleur de fond des boutons de fonctionnement
             &:hover {
+                box-shadow: 5px 5px 5px $color__dark--top;
                 background-color: lighten($color__purple, 31);
                 z-index: 1;
                 i {
@@ -474,7 +475,7 @@ h1{
         -moz-transition: all 300ms;
     //zoom et ombre sur les cards de restaurants//    
         &:hover {
-            box-shadow: 2px 2px 9px 2px $color__dark--medium;
+            box-shadow: 5px 5px 5px $color__dark--top;
             -webkit-transform: scale(1.025);
             -moz-transform: scale(1.025)
         }
@@ -563,6 +564,10 @@ h1{
     z-index: 1;
     a{
         color: $color__white;
+        &:hover {
+            color: $color__purple;
+
+        }
     }
     ul {
         margin-top: 0.5rem;
@@ -578,7 +583,7 @@ h1{
                    padding-right: 0.6rem;
                 }
             }
-        }      
+    }      
 }
 //_________________________________________________________//
 // menu du restaurant: La palette du gout//
@@ -791,20 +796,18 @@ h1{
 .menu__dessert {
     animation: appear 800ms ease-in-out;
     -webkit-transition-delay: 1.8s;
-    -moz-transition-delay: 1.8s;
+    -moz-transition-delay: 1.8
 }
-
 // responsive tablette// 
 @media all and (min-width: 767px){
-
+//responsive index.html//
 .box__circle {
     left: 20%;
 }
-
+.dishes {}
 h1 {
     font-size: 1.6rem;
 }
-
 .work {
     overflow:hidden;
     flex-direction: row;
@@ -839,11 +842,51 @@ h1 {
         }
     }
 }
+//responsive menu restaurant pour ordinateur//
+.container__menu {
+    max-width: 80%;
+    margin:auto;
+    align-items: center;
+    p img{
+        height: 20rem;
+        width: 100%;
+        object-fit: cover;
+        border-radius:40%;
+    }
+    & h2 {
+        .far {
+        right: 0rem;
+        }
+        .fas {
+            left:2.8rem;
+        }  
+    }  
+}
+.menu {
+    max-width: 60%;
+    border-radius: 50px;
+}
+.footer {
+    padding-bottom: 4rem;
+    h5 {
+        padding-left: 1.8rem;
+        padding-bottom: 1rem;
+    }
+    ul {
+        padding-left: 1rem;;
+        display: flex;
+        justify-content: space-around;
+        max-width: 90%;
+    }
+}
 
 }
 
 //responsive ordinateur//
-@media all and (min-width: 979px) {
+@media all and (min-width: 995px) {
+.box__circle {
+    left:25%;
+}
 .work {
     &__title {
         padding-left: 3rem;
@@ -871,7 +914,6 @@ h1 {
         }
     }
 }
-
 .restaurant {
     flex-direction: row;
     justify-content: center;
@@ -891,29 +933,22 @@ h1 {
         }
     }
 }
-.footer {
-    padding-bottom:4rem;
-    h5 {
-        padding-left: 2.5rem;
-        padding-bottom: 1rem;
-    }
-    ul {
-        padding-left: 1rem;;
-        display: flex;
-        justify-content: space-around;
-        max-width: 90%;
-    }
+
 }
 
-}   
 //responsive pour grand ecran//
 @media all and (min-width:1199px) {
+body {
+    background-color: rgb(243, 204, 255, 0.2) ;
+}
+.box__circle {
+    left:28%;
+}
 .container,
 .footer {
     width:90%;
     margin:auto;
 }
-
 .work {
     &__btn {
         max-width: 90%;
@@ -929,13 +964,12 @@ h1 {
         }
     }
 }
-
 .location, 
 .restaurant,
 .footer {
     border-radius: 15px;
 }
-.input_formulaire {
+.location__mappy{
     border-radius: 15px 15px 0 0;
 }
 .footer {
@@ -945,6 +979,9 @@ h1 {
 
 //responsive pour tres grand ecran//
 @media all and (min-width:1499px) {
+.box__circle{
+    left: 33%;
+}
 .work {
     &__btn {
         max-width: 90%;
@@ -957,7 +994,6 @@ h1 {
         }
     }
 }
-
 .restaurant {
     column-gap: 5rem;
     row-gap: 3.5rem;
@@ -980,4 +1016,6 @@ h1 {
     } 
 }
 
+
 }
+
