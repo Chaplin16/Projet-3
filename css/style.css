@@ -226,8 +226,8 @@ h1 {
 
 .dishes {
   position: relative;
-  top: 58%;
-  left: 4rem;
+  top: 60%;
+  left: 4.5rem;
   align-self: center;
 }
 .dishes .fas {
@@ -242,7 +242,7 @@ h1 {
   border-radius: 50%;
   position: relative;
   left: 13%;
-  bottom: 15%;
+  bottom: 20%;
 }
 
 .box__circle--point {
@@ -798,10 +798,6 @@ h1 {
 @media all and (min-width: 767px) {
   .box__circle {
     left: 20%;
-  }
-
-  h1 {
-    font-size: 1.6rem;
   }
 
   .work {
