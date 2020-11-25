@@ -3,8 +3,8 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 $color__bg--dusky: #e2e3e4;
 $color__bg--medium: #e9ecf0;
 $color__bg--light:rgba(192, 196, 200, 0.2);
-$color__dark: rgb(0, 0, 0);
-$color__dark--medium: rgba(0, 0, 0, 0.5);
+$color__black: rgb(0, 0, 0);
+$color__black--medium: rgba(0, 0, 0, 0.5);
 $color__green--light:rgb(142, 236, 216); 
 $color__green--dark: rgb(35, 153, 128);
 $color__white: #FFF;
@@ -159,9 +159,9 @@ h1{
     text-align: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    color: $color__dark, 0.9;
+    color: $color__black;
 }
-/*
+
 //loading--spinner//
 .box__loading-spinner {
     display: flex;
@@ -290,7 +290,7 @@ h1{
     bottom: -0.3rem;
     left: 6.8rem;
 }
-*/
+
 //partie : premier bloc du haut//
 .location__mappy {
     background-color:  $color__bg--dusky;
@@ -321,7 +321,7 @@ h1{
     }
     & p {
         font-size: 0.9rem;
-        color: $color__dark--medium;
+        color: $color__black--medium;
     }
 }
 .btn {
@@ -332,12 +332,12 @@ h1{
     font-weight: bold;
     border: none;
     background: $color__gradient;
-    box-shadow: 1px 1px 8px 1px $color__dark--medium;
+    box-shadow: 1px 1px 8px 1px $color__black--medium;
     transition: all 300ms;
     &:hover { 
         transform: scale(1.01);
          background: $color__gradient--light;
-         box-shadow: 3px 3px 5px $color__dark;
+         box-shadow: 3px 3px 5px $color__black;
     }
 }
 
@@ -357,7 +357,7 @@ h1{
             margin: 0 2rem;
             border-radius: 20px;
             border: none;
-            box-shadow: 3px 3px 8px $color__dark--medium;
+            box-shadow: 3px 3px 8px $color__black--medium;
             font-size: 0.9rem;
             font-weight: bold;
             position: relative;
@@ -369,7 +369,7 @@ h1{
                 font-size: 1.2rem;
             }
             &:hover {//insertion de la couleur de fond des boutons de fonctionnement//
-                box-shadow: 5px 3px 5px $color__dark--medium;
+                box-shadow: 5px 3px 5px $color__black--medium;
                 background-color: lighten($color__purple, 31);
                 z-index: 1;
                 i {
@@ -426,13 +426,13 @@ h1{
         margin: auto;
         margin-bottom:1.5rem;
         background-color: $color__white;
-        box-shadow: 2px 2px 8px $color__dark--medium;
+        box-shadow: 2px 2px 8px $color__black--medium;
         border-radius: 15px;
         overflow: hidden;
         -webkit-transition: all 300ms;
         -moz-transition: all 300ms;
         &:hover {//zoom et ombre sur les cards de restaurants//    
-            box-shadow: 5px 5px 5px $color__dark--medium;
+            box-shadow: 5px 5px 5px $color__black--medium;
             -webkit-transform: scale(1.025);
             -moz-transform: scale(1.025)
         }
@@ -458,7 +458,7 @@ h1{
         }
         &--name,
         &--place {
-            color:$color__dark;
+            color:$color__black;
             padding-left:0.8rem;
             padding-top: 0.6rem;
         }            
@@ -477,7 +477,7 @@ h1{
             right: 2rem;
             opacity:1;
             z-index: 5;
-            color: $color__dark--medium;
+            color: $color__black--medium;
             &:hover {
                 opacity: 0;
                 z-index: 1;
@@ -526,15 +526,12 @@ h1{
         }
     }
 }      
-
-
 //_________________________________________________________//
                     // menu du restaurant   //
 // insertion de la fleche de retour en haut à gauche//
 .header__page--menu a{
     &::before{
         content: " ";
-        display: block; 
         position: fixed;
         z-index: 5;
         background-image: url("../images/logo/arrow-left.svg");
@@ -551,31 +548,32 @@ h1{
     display: flex; 
     flex-direction: column;
     width: 100%;
-        p {
+        img {
             width: 100%;
+            max-height: 17rem;
             object-position: bottom;
             object-fit: cover;
-            max-height: 20rem;
         }
     //insertion des deux coeurs l un sur l autre apres le titre//
-        .far {
-            float:right;
-            position: relative;
-            color: $color__dark--medium;
-            right: 1.5rem;
+        h2 .far,
+        h2 .fas {
+        float: right;
+        position: relative;    
+        }
+        h2 .far {
+            color: $color__black--medium;
             z-index:5;
+            right: 0.5rem;
             opacity:1;
             &:hover {
                 opacity: 0;
                 z-index: 1;
             }
         }
-        .fas {
-            float: right;
-            position: relative;
+        h2 .fas {
             opacity:0;
             z-index: 1;
-            left: 1.3rem;
+            left: 2.1rem;
             transition: all scale(1);
             &:hover {
                 transform: scale(1.05);
@@ -588,73 +586,47 @@ h1{
 }
 // nom du restaurant en haut du menu//
 .menu {  
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-between;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;;
     background-color: $color__bg--medium;
-    width: 100%;
-    padding: 2rem 1.3rem 5rem 1.3rem;
+    padding: 2rem 1.3rem;
     margin-top: -4rem;
         h2 {
             font-family: "shrikhand";
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            color: $color__dark, 0.9;
-            letter-spacing: 0.1vh;
+            color: $color__black;
             padding-left: 0.6vh;           
         }   
-        &__starter,
-        &__main-course,
-        &__dessert {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;      
-        }
-// sous-titres du menu Entree Plat et Dessert//
+// bordure verte du menu Entree Plat et Dessert//
         & h3 {
-            color: $color__dark, 0.7;
-            padding-left: 0.6vh;   
-            &::after{
-                content: " ______ ";
-                display: block; 
-                position: relative;
-                color: $color__green--light;
-                bottom: 0.5rem;
-                font-weight: bold;
-            }
-            &::before{
-                content: " ______ ";
-                display: block; 
-                position: relative;
-                color: $color__green--light;
-                bottom: 0.5rem;
-                top: 2rem;
-            }
+            color: rgba(0, 0, 0, 0.7);
+            margin: 1rem 0 1rem 0.4rem;   
+            border-bottom: 3px solid $color__green--light;
+            border-width: medium;
+            width: 9%;
+            padding-bottom: 0.5rem;
         }
-        & .btn {
-            margin-top: 2rem;
-            padding: 1rem 3rem;
+        .btn {
+            display: block;
+            margin: auto;
+            margin-top: 1.5rem;
             font-size: 1.1rem;
             color: $color__white;
         }
 }
+    
 //la liste des plats dans le menu//
 .menu__card {
     display: flex;
-    position: relative;
     cursor: pointer;
-    margin-bottom: 0.5rem;
-    margin-top:0.5rem;
-    margin-left: -0.2rem;
-    padding-left: 0.5rem;
+    margin-bottom: 0.7rem;
     border-radius: 12px;
     background-color: $color__white; 
     opacity:1;
 //apparition de la partie verte/check-validation du plat//   
     &:hover .menu__card--validate,
-    &:active .menu__card--validate {
+    &:active .menu__card--validate {        
         width: 18%;
         opacity: 1;
         transform: scaleX(1.05);
@@ -676,43 +648,42 @@ h1{
         color: $color__white;
         opacity: 1;
         border-radius: 0 12px 12px 0;
+        margin-left: 1rem;
         transform: scaleX(0);
-        transition: transform 2000ms ease;
-        transform-origin: right 50%;                      
+        transition: transform 1200ms ease;
+        transform-origin: right 50%;                          
     }       
     &--name {
         width: 100%;
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: auto auto;
+       display: grid;
+        /*grid-template-rows: auto;
+        grid-template-columns: auto auto;*/
         grid-template-areas: 
         "titre-menu ."
         "detail price";
         p {
             display: block;
             &:nth-child(1) {
+                font-size: 0.9rem;
+                padding: 0.5rem 0 0.2rem 0.5rem;
                 grid-area: titre-menu;
                 font-weight: bold;
-                padding-top:0.5rem;
-                color:$color__dark, 0.9;    
+                color:$color__black;    
             }
             &:nth-child(2) {
-                grid-area: detail;
-                font-weight: 200;
-                color: $color__dark, 0.7;
-                padding-bottom:0.6rem;
+                font-size: 0.75rem;
+                padding-left: 0.5rem; 
+                grid-area: detail;     
+                color: rgba(0, 0, 0, 0.7);
                 overflow: hidden;
                 white-space: nowrap;
-                text-overflow: ellipsis;
+                text-overflow: ellipsis;        
             }
             &:nth-child(3) {
                 grid-area: price;
-                display: flex;
-                justify-content: flex-end;
-                padding-left: 0.7rem;
-                padding-right: 0.5rem;
-                color: $color__dark, 0.7;
+                color: rgba(0, 0, 0, 0.7);
                 font-weight: bold;
+                text-align: right;
                 -webkit-transform: translateX(0) 4s;
                 -moz-transform: translateX(0) 4s;
                 -webkit-transition: transform 4s;
@@ -721,6 +692,7 @@ h1{
                 &:active {
                 -webkit-transform: translateX(10px) ease-in-out 4s;
                 -moz-transform: translateX(10px) ease-in-out 4s;
+                
                 }    
             }
        }
@@ -741,7 +713,7 @@ h1{
     -webkit-transition-delay: 1.8s;
     -moz-transition-delay: 1.8
 }
-// responsive tablette// 
+
 @media all and (min-width: 767px){
 //responsive index.html//
 .box__circle {
@@ -779,32 +751,35 @@ h1{
         
     }
 }
-//responsive menu restaurant pour ordinateur//
+//responsive page menu//
 .body {
     background-color: rgb(243, 204, 255, 0.3) ;
 }
 .container__menu {
-    max-width: 80%;
-    margin:auto;
-    align-items: center;
-    p img{
-        height: 20rem;
-        width: 100%;
-        object-fit: cover;
-        border-radius:40%;
+
+    p img{    
+        max-height: 20rem;
+
     }
     & h2 {
         .far {
         right: 0rem;
         }
         .fas {
-            left:2.8rem;
+            left:2.6rem;
         }  
     }  
 }
 .menu {
-    max-width: 60%;
+    width: 70%;
+    margin: auto;
+    margin-top: -3rem;
+    margin-bottom: 2rem;;
     border-radius: 50px;
+
+    & h3 {
+        width: 12%;
+    }
 }
 .footer {
     padding-left: 0;
@@ -820,8 +795,8 @@ h1{
 
 }
 
-//responsive ordinateur//
 @media all and (min-width: 995px) {  
+//responsive index.html//
 .box__circle {
     left:25%;
 }
@@ -859,22 +834,69 @@ h1{
     }
 }
 
+//responsive page menu//
+.container__menu {
+    img {
+        object-position: center;
+        max-height: 17rem;
+    }
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding:1rem 0 0 1rem;
+    margin-top: -2.5rem;
+    column-gap: 0.5rem;
+    border-radius: 50px 50px 0 0;
+    h2 {
+        width: 100%;
+        .far {
+            right: 3.5rem;
+        }
+        .fas {
+            left: -0.9rem;
+        }
+    }
+    &__starter,
+    &__main-course,
+    &__dessert {
+        width: 32%;
+    }
+    &__card {
+        &--validate {
+        margin-left: 0
+        }
+    }
+    padding-bottom: 2rem;
 }
 
-//responsive pour grand ecran//
+}
+
 @media all and (min-width:1199px) {
+//responsive index.html//
 .box__circle {
     left:28%;
 }
 .location, 
 .restaurant,
-.footer {
-    width:95%;
+.footer,
+.container__menu {
+    width:90%;
     margin:auto;
     border-radius: 15px;
-    overflow:hidden;
+    overflow: hidden;
+    .menu p{
+        width: 85%;
+        margin: auto;
+    }
 }
-
+.footer {
+    border-radius: 15px 15px 0 0;
+    margin-top: 1rem;
+}
 .work__title,
 .restaurant__title {
     text-align: center;
@@ -889,22 +911,33 @@ h1{
 }
 .work__btn p {
     width: 12rem;
+}
+.menu h2 {
+    text-align: center;
 
 }
-.footer {
-    margin-top: 2rem;
-}
 }
 
-//responsive pour tres grand ecran//
 @media all and (min-width:1499px) {
-.box__circle{
+//responsive index.html//
+    .box__circle{
     left: 33%;
 }
-.work__btn {
-    p{
+.work__btn p { 
         max-width: 20rem;
+}
+//responsive menu//
+.container__menu {
+    p {
+       width: 70%; 
+       margin: auto;
     }
+    .menu {
+        width: 85%;
+        margin: auto;
+        margin-top: -4rem;
+    }
+
 }
 
 }
