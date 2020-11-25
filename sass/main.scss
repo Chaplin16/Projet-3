@@ -4,10 +4,7 @@ $color__bg--dusky: #e2e3e4;
 $color__bg--medium: #e9ecf0;
 $color__bg--light:rgba(192, 196, 200, 0.2);
 $color__dark: rgb(0, 0, 0);
-$color__dark--light: rgba(0, 0, 0, 0.2);
 $color__dark--medium: rgba(0, 0, 0, 0.5);
-$color__dark--dark: rgba(0, 0, 0, 0.7);
-$color__dark--top:  rgba(0, 0, 0, 0.9);
 $color__green--light:rgb(142, 236, 216); 
 $color__green--dark: rgb(35, 153, 128);
 $color__white: #FFF;
@@ -162,9 +159,9 @@ h1{
     text-align: center;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    color: $color__dark--top;
+    color: $color__dark, 0.9;
 }
-
+/*
 //loading--spinner//
 .box__loading-spinner {
     display: flex;
@@ -293,6 +290,7 @@ h1{
     bottom: -0.3rem;
     left: 6.8rem;
 }
+*/
 //partie : premier bloc du haut//
 .location__mappy {
     background-color:  $color__bg--dusky;
@@ -339,7 +337,7 @@ h1{
     &:hover { 
         transform: scale(1.01);
          background: $color__gradient--light;
-         box-shadow: 4px 4px 5px $color__dark--top;
+         box-shadow: 3px 3px 5px $color__dark;
     }
 }
 
@@ -359,7 +357,7 @@ h1{
             margin: 0 2rem;
             border-radius: 20px;
             border: none;
-            box-shadow: 1.5px 1px 8px 1px $color__dark--light;
+            box-shadow: 3px 3px 8px $color__dark--medium;
             font-size: 0.9rem;
             font-weight: bold;
             position: relative;
@@ -371,7 +369,7 @@ h1{
                 font-size: 1.2rem;
             }
             &:hover {//insertion de la couleur de fond des boutons de fonctionnement//
-                box-shadow: 5px 5px 5px $color__dark--top;
+                box-shadow: 5px 3px 5px $color__dark--medium;
                 background-color: lighten($color__purple, 31);
                 z-index: 1;
                 i {
@@ -428,13 +426,13 @@ h1{
         margin: auto;
         margin-bottom:1.5rem;
         background-color: $color__white;
-        box-shadow: 2px 1px 9px 1px $color__dark--light;
+        box-shadow: 2px 2px 8px $color__dark--medium;
         border-radius: 15px;
         overflow: hidden;
         -webkit-transition: all 300ms;
         -moz-transition: all 300ms;
         &:hover {//zoom et ombre sur les cards de restaurants//    
-            box-shadow: 5px 5px 5px $color__dark--top;
+            box-shadow: 5px 5px 5px $color__dark--medium;
             -webkit-transform: scale(1.025);
             -moz-transform: scale(1.025)
         }
@@ -460,7 +458,7 @@ h1{
         }
         &--name,
         &--place {
-            color:$color__dark--top;
+            color:$color__dark;
             padding-left:0.8rem;
             padding-top: 0.6rem;
         }            
@@ -603,7 +601,7 @@ h1{
             font-family: "shrikhand";
             font-size: 1.4rem;
             font-weight: bold;
-            color: $color__dark--top;
+            color: $color__dark, 0.9;
             letter-spacing: 0.1vh;
             padding-left: 0.6vh;           
         }   
@@ -616,7 +614,7 @@ h1{
         }
 // sous-titres du menu Entree Plat et Dessert//
         & h3 {
-            color: $color__dark--dark;
+            color: $color__dark, 0.7;
             padding-left: 0.6vh;   
             &::after{
                 content: " ______ ";
@@ -696,12 +694,12 @@ h1{
                 grid-area: titre-menu;
                 font-weight: bold;
                 padding-top:0.5rem;
-                color:$color__dark--top;    
+                color:$color__dark, 0.9;    
             }
             &:nth-child(2) {
                 grid-area: detail;
                 font-weight: 200;
-                color: $color__dark--dark;
+                color: $color__dark, 0.7;
                 padding-bottom:0.6rem;
                 overflow: hidden;
                 white-space: nowrap;
@@ -713,7 +711,7 @@ h1{
                 justify-content: flex-end;
                 padding-left: 0.7rem;
                 padding-right: 0.5rem;
-                color: $color__dark--dark;
+                color: $color__dark, 0.7;
                 font-weight: bold;
                 -webkit-transform: translateX(0) 4s;
                 -moz-transform: translateX(0) 4s;
@@ -833,28 +831,27 @@ h1{
         width: 100%;
     }
     &__btn {
-        max-width: 85%;
+        column-gap: 2rem;
         i {
             padding-left:10%;
         }
         p {
-            max-width: 12rem;
+            max-width: 10rem;
         }
     }
 }
 .restaurant {
-    flex-direction: row;
-    justify-content: center;
-    column-gap: 3rem;
-    row-gap: 2.5rem;
+    row-gap: 1.5rem;
+    margin:0;
     &__title {
         width: 100%;
-        padding-bottom: 0;
         margin-left:1.5rem;
+        padding-bottom: 0;
     }
     &__card {
         width: 40%;
-        margin:0;
+        margin: 2%;
+        margin-left: 5.5%;
         &:hover {
             -webkit-transform: scale(1.1);
             -moz-transform: scale(1.1)
@@ -869,29 +866,30 @@ h1{
 .box__circle {
     left:28%;
 }
-.container,
+.location, 
+.restaurant,
 .footer {
-    width:90%;
+    width:95%;
     margin:auto;
+    border-radius: 15px;
+    overflow:hidden;
 }
-.work {
-    &__btn {
-        i {
-            margin-left: 2%;
-        }
-    }
-}
+
 .work__title,
 .restaurant__title {
     text-align: center;
     padding-left: 0;
     margin-left: 0;
 }
-.location, 
-.restaurant,
-.footer {
-    border-radius: 15px;
-    overflow:hidden;
+.restaurant {
+    &__card {
+    max-width: 23%;
+    margin: auto;
+    }
+}
+.work__btn p {
+    width: 12rem;
+
 }
 .footer {
     margin-top: 2rem;
@@ -899,32 +897,15 @@ h1{
 }
 
 //responsive pour tres grand ecran//
-@media all and (min-width:1350px) {
+@media all and (min-width:1499px) {
 .box__circle{
     left: 33%;
 }
-
-.restaurant {
-    row-gap: 3.5rem;
-    padding-bottom: 4rem;
-    &__card {
-        max-width: 38%;
-        height: 17rem;
-        img {
-            height:12rem;
-        }
-        &:nth-of-type(1),
-        &:nth-of-type(2) {
-            height: 17rem;
-        }
-        &::after {
-            top: -16rem;
-            margin-right: 2rem;
-            line-height: 5px;
-        }
-    } 
+.work__btn {
+    p{
+        max-width: 20rem;
+    }
 }
-
 
 }
 
