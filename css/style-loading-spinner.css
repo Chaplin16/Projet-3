@@ -1,45 +1,54 @@
-body {
-    height: 100%;
-}
-html {
-    height: 100%;
-}
+
 .box__loading-spinner {
-    display: flex; 
+    display: flex;
+    position: fixed; 
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 50%;
-    position: relative;
-    top: 20%;
-    left: 10%;
+    width: 100vw;
+    height: 0;
+    top: 0;
+    z-index: 10;
+    animation: loading-spinner-apparence ease ;
+    animation-iteration-count: 1;
+    animation-duration: 4.2s;
+    animation-fill-mode: backwards;
+    overflow: hidden;
 }
 
 .dishes {
     position: relative;
-    top: 4.5rem;
-    left:4.5rem;
+    top:55%;
+    left: 4.5rem;
+    align-self: center;
 }
-.fas {
+.dishes .fas {
     font-size: 8rem;
-    animation: rotation-dishes 3s ease 3, change-color 3000ms ease-in-out 4;  
+    animation: rotation-dishes 2500ms 2 ease-in-out, change-color 3500ms ease-in-out ;  
+    animation-fill-mode: backwards;
 }
+
 
 .box__circle {
     width: 80%;
     height: 70%;
     border-radius: 50%;
     position: relative;
+    left:9%;
+    bottom: 18%;
+
 }
 
 .box__circle--point {
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     color: #000;
-    background-color: #a3a4a7;
-    animation: circle-growth 1500ms linear 6;
+    background-color: #868688;
+    animation: circle-growth 1500ms ease;
+    animation-timing-function: linear;
+    animation-iteration-count: 4;
+    z-index: 5;
 }
 
 .box__circle--point:nth-child(1){
@@ -118,58 +127,3 @@ html {
     bottom: -0.3rem;
     left: 6.8rem;
 }
-
-@keyframes circle-growth {
-    0% {
-        transform:scale(0.8);
-    }
-    20% {
-        transform:scale(0.8);
-    }
-    50% {
-        transform:scale(1.7);
-    }
-    80% {
-        transform:scale(0.8);
-    }
-    100% {
-        transform:scale(0.8);
-    }
-}
-
-@keyframes rotation-dishes {
-    0% {
-        transform: rotate(40deg)
-    }
-    60% {
-        transform: rotate(-40deg)
-    }  
-    100% {
-        transform: rotate(40deg);
-    }
-}
-
-@keyframes change-color {
-    0% {
-        color: #e41c1c;
-    }
-    17% {
-        color: #ec6314;
-    }
-    34% {
-        color: #f1e753;
-    }
-    51% {
-        color: #3ace35;
-    }
-    68% {
-        color: #3cfdfd;
-    }
-    85% {
-        color: #e712ee;
-    }
-    100% {
-        color: #a106fb;
-    }
-}
-
