@@ -1,4 +1,8 @@
 html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left};
+@mixin global-position {
+    float: right;
+    position: relative;
+}
 
 $color__bg--dusky: #e2e3e4;
 $color__bg--medium: #e9ecf0;
@@ -312,8 +316,7 @@ h1{
         &:nth-of-type(1)::after,
         &:nth-of-type(2)::after {
             content:" Nouveau ";
-            float: right;
-            position: relative;
+            @include global-position;
             background-color: $color__green--light;
             color:$color__green--dark;
             text-align: center;
@@ -342,8 +345,7 @@ h1{
             opacity: 0.8;           
         }
         & i {// insertion du coeur à droite du nom du restaurant//
-            float: right;
-            position: relative; 
+            @include global-position;
             bottom: 2.3rem;
         }
         .far {
@@ -430,8 +432,7 @@ h1{
     //insertion des deux coeurs l un sur l autre apres le titre//
         h2 .far,
         h2 .fas {
-        float: right;
-        position: relative;    
+            @include global-position; 
         }
         h2 .far {
             color: $color__black--medium;
