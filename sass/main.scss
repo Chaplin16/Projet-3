@@ -26,8 +26,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
     background: $color__gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: scale(1.11);
-    animation: appear 300ms;
+    animation: appear 100ms;
 }
 
 @keyframes turn-card-validate {
@@ -450,7 +449,6 @@ h1{
         h2 .fas {
             @include heart-unseen;
             left: 2.1rem;
-            transition: all scale(1);
             &:hover {
                 @include appear-heart;
             }
