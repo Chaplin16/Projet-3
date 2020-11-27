@@ -12,14 +12,7 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 
 @mixin heart-grey {
-    color: $color__black--medium;
     z-index:5;
-    opacity:1;
-}
-
-@mixin heart-purple {
-    background: $color__gradient;
-    z-index: 5;
     opacity:1;
 }
 
@@ -29,12 +22,12 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 
 @mixin appear-heart {
-    @include heart-purple;
+    @include heart-grey;
     background: $color__gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: scale(1.07);
-    animation: appear 500ms;
+    transform: scale(1.11);
+    animation: appear 300ms;
 }
 
 @keyframes turn-card-validate {
@@ -237,11 +230,9 @@ h1{
         flex-direction: column;
         row-gap: 1.5rem;
         counter-reset: compteListe;
-        &--1,
-        &--2,
-        &--3 {
+        &--btn {
             padding: 1rem 0 0.9rem 0;
-            margin: 0 2rem;
+            margin: 0 3rem;
             border-radius: 20px;
             border: none;
             box-shadow: 3px 3px 8px $color__black--medium;
@@ -249,13 +240,30 @@ h1{
             font-weight: bold;
             position: relative;
             transition: 300ms;
-            i { // insertion des icones des " boutons du fonctionnement//
+        // insertion des ronds numerotés sur les 3 boutons de fonctionnement//    
+            &::after {
+                counter-increment: compteListe;
+                content: counter(compteListe) " ";
+                position: absolute; 
+                background-color: #8d51ee;
+                font-size: 0.8rem;
+                font-weight: bold;
+                color: $color__white;
+                border-radius: 15px;
+                width: 3.5vh;
+                height: 3.5vh;
+                left:-0.6rem;
+                bottom:1rem;
+            }
+        // insertion des icones des " boutons du fonctionnement//        
+            i { 
                 float:left;
-                padding: 0 2% 0 9%;
+                padding: 0 2% 1% 9%;
                 opacity: 0.5; 
                 font-size: 1.2rem;
             }
-            &:hover {//insertion de la couleur de fond des boutons de fonctionnement//
+    //insertion de la couleur de fond des boutons de fonctionnement//        
+            &:hover {
                 box-shadow: 5px 3px 5px $color__black--medium;
                 background-color: lighten($color__purple, 30%);
                 z-index: 1;
@@ -265,23 +273,6 @@ h1{
                     z-index: 5;
                 }
             }
-        }
-    // insertion des ronds numerotés sur les 3 boutons de fonctionnement//
-        &--1::after,
-        &--2::after,
-        &--3::after {
-            counter-increment: compteListe;
-            content: counter(compteListe) " ";
-            position: absolute; 
-            background-color: #8d51ee;
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: $color__white;
-            border-radius: 15px;
-            width: 3vh;
-            height: 3vh;
-            left:-0.6rem;
-            bottom:1.1rem;
         }
     }  
 }
@@ -358,15 +349,16 @@ h1{
         }
         .far {
             @include heart-grey;
-            right: 2rem;
+            color: $color__black--medium;
+            right: 2.02rem;
             &:hover {
                 @include heart-unseen;
+
             }
         }    
        .fas {
             @include heart-unseen;
             right: 0rem; 
-            transition: all scale(1);
             &:hover {
                 @include appear-heart;
             }   
@@ -436,6 +428,7 @@ h1{
         }
         h2 .far {
             @include heart-grey;
+            color: $color__black--medium;
             right: 0.5rem;
             &:hover {
                 @include heart-unseen;
@@ -561,25 +554,26 @@ h1{
     flex-wrap: wrap;
     height: 8rem;
     margin-bottom: 2rem;
+    &__title {
+        margin-left:1.5rem;
+    }
     &__btn{
         flex-direction: row;
         max-width: 90%;
         column-gap: 1.5rem;
         margin:auto;
         margin-bottom: 1rem;
-        &--1,
-        &--2,
-        &--3 {
+        &--btn {
             display: flex;
             align-items: center;
             margin: 0;
             padding: 1rem;
-            max-width: 12rem;
+            max-width: 10rem;
             & i {
                 padding: 0 0.3rem;
             }
             &:after {
-                bottom: 1.4rem;
+                bottom: 1rem;
             }
         }     
     }
@@ -645,11 +639,10 @@ h1{
 
 }
 
-@media all and (min-width: 995px) {  
+@media all and (min-width: 950px) {  
 //responsive index.html//
 .work {
     &__title {
-        padding-left: 3rem;
         width: 100%;
     }
     &__btn {
@@ -664,8 +657,7 @@ h1{
     img {
         object-position: center;
         max-height: 17rem;
-    }
-    
+    }   
 }
 .menu {
     display: flex;
@@ -761,27 +753,23 @@ h1{
 
 //responsive menu//
 .container__menu {
-    p{
+    width: 83%;
+    p img {                    
+        border-radius: 50px;
         margin: auto;
-        width: 83%;
-        & img {                   
-        
-        border-radius: 15px;
-        }
     }
     & .menu {
-        max-width: 75%;
+        max-width: 88%;
         margin: auto;
         margin-top: -4rem;
         border-radius: 50px;
         &__card {
-            max-width: 90%;
+            max-width: 100%;
         }
     }
 }
 
 .footer {
-    width: 75%;
     margin: auto;
     margin-top: 1rem;
 }

@@ -228,9 +228,9 @@ h1 {
   row-gap: 1.5rem;
   counter-reset: compteListe;
 }
-.work__btn--1, .work__btn--2, .work__btn--3 {
+.work__btn--btn {
   padding: 1rem 0 0.9rem 0;
-  margin: 0 2rem;
+  margin: 0 3rem;
   border-radius: 20px;
   border: none;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
@@ -239,23 +239,7 @@ h1 {
   position: relative;
   transition: 300ms;
 }
-.work__btn--1 i, .work__btn--2 i, .work__btn--3 i {
-  float: left;
-  padding: 0 2% 0 9%;
-  opacity: 0.5;
-  font-size: 1.2rem;
-}
-.work__btn--1:hover, .work__btn--2:hover, .work__btn--3:hover {
-  box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.5);
-  background-color: #e8dcfc;
-  z-index: 1;
-}
-.work__btn--1:hover i, .work__btn--2:hover i, .work__btn--3:hover i {
-  color: #8d51ee;
-  opacity: 1;
-  z-index: 5;
-}
-.work__btn--1::after, .work__btn--2::after, .work__btn--3::after {
+.work__btn--btn::after {
   counter-increment: compteListe;
   content: counter(compteListe) " ";
   position: absolute;
@@ -264,10 +248,26 @@ h1 {
   font-weight: bold;
   color: #FFF;
   border-radius: 15px;
-  width: 3vh;
-  height: 3vh;
+  width: 3.5vh;
+  height: 3.5vh;
   left: -0.6rem;
-  bottom: 1.1rem;
+  bottom: 1rem;
+}
+.work__btn--btn i {
+  float: left;
+  padding: 0 2% 1% 9%;
+  opacity: 0.5;
+  font-size: 1.2rem;
+}
+.work__btn--btn:hover {
+  box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.5);
+  background-color: #e8dcfc;
+  z-index: 1;
+}
+.work__btn--btn:hover i {
+  color: #8d51ee;
+  opacity: 1;
+  z-index: 5;
 }
 
 .work__title,
@@ -340,10 +340,10 @@ h1 {
   bottom: 2.1rem;
 }
 .restaurant__card .far {
-  color: rgba(0, 0, 0, 0.5);
   z-index: 5;
   opacity: 1;
-  right: 2rem;
+  color: rgba(0, 0, 0, 0.5);
+  right: 2.02rem;
 }
 .restaurant__card .far:hover {
   opacity: 0;
@@ -353,17 +353,15 @@ h1 {
   opacity: 0;
   z-index: 1;
   right: 0rem;
-  transition: all scale(1);
 }
 .restaurant__card .fas:hover {
-  background: linear-gradient(#e76ce7, #a37cfd);
   z-index: 5;
   opacity: 1;
   background: linear-gradient(#e76ce7, #a37cfd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(1.07);
-  animation: appear 500ms;
+  transform: scale(1.11);
+  animation: appear 300ms;
 }
 
 .footer {
@@ -421,9 +419,9 @@ h1 {
   position: relative;
 }
 .container__menu h2 .far {
-  color: rgba(0, 0, 0, 0.5);
   z-index: 5;
   opacity: 1;
+  color: rgba(0, 0, 0, 0.5);
   right: 0.5rem;
 }
 .container__menu h2 .far:hover {
@@ -437,14 +435,13 @@ h1 {
   transition: all scale(1);
 }
 .container__menu h2 .fas:hover {
-  background: linear-gradient(#e76ce7, #a37cfd);
   z-index: 5;
   opacity: 1;
   background: linear-gradient(#e76ce7, #a37cfd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(1.07);
-  animation: appear 500ms;
+  transform: scale(1.11);
+  animation: appear 300ms;
 }
 
 .menu {
@@ -554,6 +551,9 @@ h1 {
     height: 8rem;
     margin-bottom: 2rem;
   }
+  .work__title {
+    margin-left: 1.5rem;
+  }
   .work__btn {
     flex-direction: row;
     max-width: 90%;
@@ -561,18 +561,18 @@ h1 {
     margin: auto;
     margin-bottom: 1rem;
   }
-  .work__btn--1, .work__btn--2, .work__btn--3 {
+  .work__btn--btn {
     display: flex;
     align-items: center;
     margin: 0;
     padding: 1rem;
-    max-width: 12rem;
+    max-width: 10rem;
   }
-  .work__btn--1 i, .work__btn--2 i, .work__btn--3 i {
+  .work__btn--btn i {
     padding: 0 0.3rem;
   }
-  .work__btn--1:after, .work__btn--2:after, .work__btn--3:after {
-    bottom: 1.4rem;
+  .work__btn--btn:after {
+    bottom: 1rem;
   }
 
   .restaurant {
@@ -631,9 +631,8 @@ h1 {
     justify-content: space-around;
   }
 }
-@media all and (min-width: 995px) {
+@media all and (min-width: 950px) {
   .work__title {
-    padding-left: 3rem;
     width: 100%;
   }
   .work__btn {
@@ -725,25 +724,24 @@ h1 {
   }
 }
 @media all and (min-width: 1499px) {
-  .container__menu p {
-    margin: auto;
+  .container__menu {
     width: 83%;
   }
   .container__menu p img {
-    border-radius: 15px;
+    border-radius: 50px;
+    margin: auto;
   }
   .container__menu .menu {
-    max-width: 75%;
+    max-width: 88%;
     margin: auto;
     margin-top: -4rem;
     border-radius: 50px;
   }
   .container__menu .menu__card {
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .footer {
-    width: 75%;
     margin: auto;
     margin-top: 1rem;
   }
