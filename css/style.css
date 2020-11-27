@@ -413,6 +413,9 @@ h1 {
   object-position: bottom;
   object-fit: cover;
 }
+.container__menu .exception {
+  object-position: center;
+}
 .container__menu h2 .far,
 .container__menu h2 .fas {
   float: right;
@@ -734,7 +737,7 @@ h1 {
   .container__menu .menu {
     max-width: 88%;
     margin: auto;
-    margin-top: -4rem;
+    margin-top: -2rem;
     border-radius: 50px;
   }
   .container__menu .menu__card {

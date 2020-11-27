@@ -421,6 +421,9 @@ h1{
             object-position: bottom;
             object-fit: cover;
         }
+        & .exception {
+            object-position: center;
+        }
     //insertion des deux coeurs l un sur l autre apres le titre//
         h2 .far,
         h2 .fas {
@@ -761,7 +764,7 @@ h1{
     & .menu {
         max-width: 88%;
         margin: auto;
-        margin-top: -4rem;
+        margin-top: -2rem;
         border-radius: 50px;
         &__card {
             max-width: 100%;
