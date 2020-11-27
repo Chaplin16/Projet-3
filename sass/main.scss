@@ -172,6 +172,11 @@ h1{
     color: $color__black;
 }
 
+//centrage loading pinner//
+.box__circle {
+    left: 2%;
+}
+
 //partie : premier bloc du haut//
 .location__mappy {
     background-color:  $color__bg--dusky;
@@ -205,6 +210,7 @@ h1{
         color: $color__black--medium;
     }
 }
+
 .btn {
     margin: auto;
     padding: 0.8rem 1.3rem;
@@ -221,6 +227,7 @@ h1{
         box-shadow: 3px 3px 5px $color__black;
     }
 }
+
 //partie deuxieme bloc: fonctionnement//
 .work {
     height: 20rem;
@@ -365,6 +372,7 @@ h1{
         }
      }                     
 }    
+
 //bas de page//
 .footer {
     padding: 1rem 0 2rem 2rem;
@@ -393,6 +401,7 @@ h1{
         }
     }
 }      
+
 //_________________________________________________________//
                     // menu du restaurant   //
 // insertion de la fleche de retour en haut à gauche//
@@ -410,6 +419,7 @@ h1{
         left:1.6rem;
     }
 }
+
 .container__menu {
     border: 1px solid transparent;
     display: flex; 
@@ -446,6 +456,7 @@ h1{
             }
         }
 }
+
 // nom du restaurant en haut du menu//
 .menu {  
     border-top-left-radius: 50px;
@@ -477,7 +488,7 @@ h1{
             color: $color__white;
         }
 }
-    
+
 //la liste des plats dans le menu//
 .menu__card {
     display: flex;
@@ -533,7 +544,7 @@ h1{
     font-weight: bold;
 
     }  
-}       
+}
 
 //animation pour faire apparaitre en douceur le menu//
 .menu__starter,
@@ -550,7 +561,18 @@ h1{
     animation-delay: 1000ms;
 }
 
+@media all and (min-width: 450px) {
+//responsive loading spinner//
+.box__circle {
+    left: 18%;
+}
+
 @media all and (min-width: 767px){
+//responsive loading-spinner//
+.box__circle {
+    left: 25%;
+}
+
 //responsive index.html//
 .work {
     display: flex;
@@ -605,6 +627,7 @@ h1{
 .body {
     background-color: rgb(243, 204, 255, 0.3);
 }
+
 .container__menu {
     p img{    
         max-height: 20rem;
@@ -618,6 +641,7 @@ h1{
         }  
     }  
 }
+
 .menu {
     width: 70%;
     margin: auto;
@@ -628,6 +652,7 @@ h1{
         width: 12%;
     }
 }
+
 .footer {
     padding-left: 0;
     h5 {
@@ -642,7 +667,13 @@ h1{
 
 }
 
-@media all and (min-width: 950px) {  
+}
+@media all and (min-width: 950px) { 
+//responsive loading spinner // 
+.box__circle {
+    left: 30%;
+} 
+
 //responsive index.html//
 .work {
     &__title {
@@ -655,6 +686,7 @@ h1{
         }
     }
 }
+
 //responsive page menu//
 .container__menu {
     img {
@@ -662,6 +694,7 @@ h1{
         max-height: 17rem;
     }   
 }
+
 .menu {
     display: flex;
     flex-direction: row;
@@ -700,8 +733,12 @@ h1{
 }
 
 @media all and (min-width:1199px) {
-//responsive index.html//
+//responsive loading spinner // 
+.box__circle {
+    left: 35%;
+}   
 
+//responsive index.html//
 .location, 
 .restaurant,
 .footer,

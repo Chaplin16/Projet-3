@@ -168,6 +168,10 @@ h1 {
   color: black;
 }
 
+.box__circle {
+  left: 2%;
+}
+
 .location__mappy {
   background-color: #e2e3e4;
   width: 100%;
@@ -547,7 +551,16 @@ h1 {
   animation-delay: 1000ms;
 }
 
-@media all and (min-width: 767px) {
+@media all and (min-width: 450px) {
+  .box__circle {
+    left: 18%;
+  }
+}
+@media all and (min-width: 450px) and (min-width: 767px) {
+  .box__circle {
+    left: 25%;
+  }
+
   .work {
     display: flex;
     flex-wrap: wrap;
@@ -635,6 +648,10 @@ h1 {
   }
 }
 @media all and (min-width: 950px) {
+  .box__circle {
+    left: 30%;
+  }
+
   .work__title {
     width: 100%;
   }
@@ -682,6 +699,10 @@ h1 {
   }
 }
 @media all and (min-width: 1199px) {
+  .box__circle {
+    left: 35%;
+  }
+
   .location,
 .restaurant,
 .footer,
