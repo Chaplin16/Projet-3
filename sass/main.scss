@@ -229,8 +229,8 @@ h1{
 
 //partie deuxieme bloc: fonctionnement//
 .work {
-    height: 20rem;
-    margin-top: 1.7rem;
+
+    margin: 1.7rem 0;
     &__btn {
         display: flex;            
         flex-direction: column;
@@ -252,14 +252,15 @@ h1{
                 content: counter(compteListe) " ";
                 position: absolute; 
                 background-color: #8d51ee;
-                font-size: 0.8rem;
+                font-size: 0.7rem;
                 font-weight: bold;
                 color: $color__white;
                 border-radius: 15px;
-                width: 3.5vh;
-                height: 3.5vh;
-                left:-0.6rem;
-                bottom:1rem;
+                width: 1.3rem;
+                height: 1.3rem;
+                left:-0.7rem;
+                bottom:0.9rem;
+                line-height: 1.4rem;
             }
         // insertion des icones des " boutons du fonctionnement//        
             i { 
