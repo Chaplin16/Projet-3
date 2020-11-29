@@ -131,18 +131,16 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
     }
 }
 
-
 $color__bg--dusky: #e2e3e4;
-$color__bg--medium: #e9ecf0;
 $color__bg--light:rgba(192, 196, 200, 0.2);
 $color__black: rgb(0, 0, 0);
 $color__black--medium: rgba(0, 0, 0, 0.5);
 $color__green--light:rgb(142, 236, 216); 
-$color__green--dark: rgb(35, 153, 128);
 $color__white: #FFF;
 $color__purple:#8d51ee;
 $color__gradient: linear-gradient(#e76ce7,#a37cfd);
-$color__gradient--light: linear-gradient(to top,rgb(207, 130, 207),rgb(163, 135, 228));
+$color__gradient--light: linear-gradient(to top,rgb(231, 108, 231, 0.8),rgb(163, 124, 253, 0.8));
+
 
 
 :root {
@@ -229,7 +227,6 @@ h1{
 
 //partie deuxieme bloc: fonctionnement//
 .work {
-
     margin: 1.7rem 0;
     &__btn {
         display: flex;            
@@ -238,7 +235,7 @@ h1{
         counter-reset: compteListe;
         &--btn {
             padding: 1rem 0 0.9rem 0;
-            margin: 0 3rem;
+            margin: 0 1.5rem;
             border-radius: 20px;
             border: none;
             box-shadow: 3px 3px 8px $color__black--medium;
@@ -246,6 +243,11 @@ h1{
             font-weight: bold;
             position: relative;
             transition: 300ms;
+            line-height: 1.5rem;
+            &:nth-child(1) {
+                i {padding-right: 1.5rem;
+                }
+            }
         // insertion des ronds numerotés sur les 3 boutons de fonctionnement//    
             &::after {
                 counter-increment: compteListe;
@@ -259,13 +261,14 @@ h1{
                 width: 1.3rem;
                 height: 1.3rem;
                 left:-0.7rem;
-                bottom:0.9rem;
-                line-height: 1.4rem;
+                bottom:1rem;
+                line-height: 1.3rem;
             }
         // insertion des icones des " boutons du fonctionnement//        
             i { 
                 float:left;
-                padding: 0 2% 1% 9%;
+                padding-left: 12%;
+ 
                 opacity: 0.5; 
                 font-size: 1.2rem;
             }
@@ -323,7 +326,7 @@ h1{
             content:" Nouveau ";
             @include global-position;
             background-color: $color__green--light;
-            color:$color__green--dark;
+            color: darken($color__green--light, 40%);
             text-align: center;
             font-weight: bold;
             line-height: 1.8rem;
@@ -460,7 +463,7 @@ h1{
 .menu {  
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    background-color: $color__bg--medium;
+    background-color: #e9ecf0;
     padding: 2rem 1.3rem;
     margin-top: -4rem;
         h2 {
@@ -565,6 +568,7 @@ h1{
 .box__circle {
     left: 18%;
 }
+}
 
 @media all and (min-width: 767px){
 //responsive loading-spinner//
@@ -576,17 +580,13 @@ h1{
 .work {
     display: flex;
     flex-wrap: wrap;
-    height: 8rem;
-    margin-bottom: 2rem;
     &__title {
         margin-left:1.5rem;
     }
     &__btn{
         flex-direction: row;
-        max-width: 90%;
         column-gap: 1.5rem;
         margin:auto;
-        margin-bottom: 1rem;
         &--btn {
             display: flex;
             align-items: center;
@@ -597,19 +597,17 @@ h1{
                 padding: 0 0.3rem;
             }
             &:after {
-                bottom: 1rem;
+                bottom: 1.7rem;
+                line-height: 1.2rem;
             }
         }     
     }
 }
 
 .restaurant {
-    row-gap: 1.5rem;
-    margin: 0;
     &__title {
         width: 100%;
         margin-left:1.5rem;
-        padding-bottom: 0;
     }
     &__card {
         width: 40%;
@@ -666,7 +664,6 @@ h1{
 
 }
 
-}
 @media all and (min-width: 950px) { 
 //responsive loading spinner // 
 .box__circle {
@@ -775,10 +772,15 @@ h1{
 
 .work__btn {
     & i {
-       padding-left: 5%; 
+        padding-left: 5%; 
+        padding-right: 10%;
     }
-    ::after {
-        bottom: 1.2rem;
+    &--btn {
+        min-width: 13rem;
+        white-space: nowrap;
+        &::after {
+            bottom: 0.9rem;
+        }    
     }
 }
 
@@ -789,8 +791,11 @@ h1{
 }
 
 @media all and (min-width:1499px) {
-
-//responsive menu//
+//responsive index.html//@at-root
+.work__btn--btn {
+    min-width: 15rem;;
+}
+    //responsive menu//
 .container__menu {
     width: 83%;
     p img {                    
@@ -812,6 +817,5 @@ h1{
     margin: auto;
     margin-top: 1rem;
 }
-
 
 }
