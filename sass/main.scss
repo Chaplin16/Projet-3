@@ -2,10 +2,11 @@
 @import "utils/variables";
 @import "utils/mixin";
 @import "utils/keyframes";
-@import "components/btn";
+@import "utils/animation";
 @import "layout/header";
 @import "layout/footer";
-@import "utils/animation";
+@import "components/btn";
+
 
 :root {
     font-family: "roboto";
@@ -33,17 +34,16 @@ h1{
     padding-bottom: $size;
     color: $color__black;
 }
-
-//centrage loading pinner//
+//centrage loading spinner
 .box__circle {
-    left: 5vw;
+    left: 10%;  
 }
 
-//partie deuxieme bloc: fonctionnement//
-.work {
+//partie bloc: fonctionnement operation
+.operation {
     margin: 1.7rem 0;
-    &__btn {
-        display: flex;            
+    &__content {
+        display: flex;
         flex-direction: column;
         row-gap: $size * 3;
         counter-reset: compteListe;
@@ -62,7 +62,7 @@ h1{
                 i {padding-right: $size * 3;
                 }
             }
-        // insertion des ronds numerotés sur les 3 boutons de fonctionnement//    
+        // insertion des ronds numerotés sur les 3 boutons de fonctionnement
             &::after {
                 counter-increment: compteListe;
                 content: counter(compteListe) " ";
@@ -78,14 +78,14 @@ h1{
                 bottom:$size * 2;
                 line-height: 1.3rem;
             }
-        // insertion des icones des boutons du fonctionnement//        
+        // insertion des icones des boutons du fonctionnement
             i { 
                 float:left;
                 padding-left: 12%;
                 opacity: 0.5; 
                 font-size: 1.2rem;
             }
-    //insertion de la couleur de fond des boutons de fonctionnement//        
+    //insertion de la couleur de fond des boutons de fonctionnement
             &:hover {
                 box-shadow: 5px 3px 5px $color__black--medium;
                 background-color: lighten($color__purple, 30%);
@@ -100,14 +100,14 @@ h1{
     }  
 }
 
-.work__title,
+.operation__title,
 .restaurant__title {
     font-weight: bold;
     padding-left: $size * 2;
     font-size: 1.35rem;
     padding-bottom: $size * 3;
 }
-//partie troisieme bloc: restaurant//
+//partie troisieme bloc: restaurant
 .restaurant {
     display: flex; 
     flex-wrap: wrap;
@@ -126,12 +126,12 @@ h1{
         border-radius: 15px;
         overflow: hidden;
         transition: all 300ms;
-//zoom et ombre sur les cards de restaurants//            
+//zoom et ombre sur les cards de restaurants
         &:hover {
             box-shadow: 5px 5px 5px $color__black--medium;
             transform: scale(1.025);
         }
-//insertion  des encadrés "nouveau"//        
+//insertion  des encadrés "nouveau"
         &:nth-of-type(1)::after,
         &:nth-of-type(2)::after {
             content:" Nouveau ";
@@ -141,7 +141,7 @@ h1{
             text-align: center;
             font-weight: bold;
             line-height: 1.8rem;
-            width: 5.5rem;                    
+            width: 5.5rem;
             clear: right;
             bottom: 14rem;
             right: 0.6rem;
@@ -163,7 +163,7 @@ h1{
         &--place {
             opacity: 0.8;           
         }
-// insertion du coeur à droite du nom du restaurant//
+// insertion du coeur à droite du nom du restaurant
         & i {
            @include global-position;
             bottom: 2.1rem;
@@ -188,8 +188,7 @@ h1{
     }                     
 }    
 
-//_________________________________________________________//
-                    // Autre page HTML: menu du restaurant   //
+                    // Autre page HTML: menu du restaurant                   
 .container__menu {
     display: flex; 
     flex-direction: column;
@@ -203,7 +202,7 @@ h1{
     & .exception {
         object-position: center;
     }
-//insertion des deux coeurs l un sur l autre apres le titre//
+//insertion des deux coeurs l un sur l autre apres le titre
     h2 .far,
     h2 .fas {
         @include global-position; 
@@ -227,7 +226,7 @@ h1{
     }
 }
 
-// nom du restaurant en haut du menu//
+// nom du restaurant en haut du menu
 .menu {  
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -241,7 +240,7 @@ h1{
         color: $color__black;
         padding-left: 0.6vh;           
     }   
-// bordure verte du menu Entree Plat et Dessert//
+// bordure verte du menu Entree Plat et Dessert
     & h3 {
         color: lighten(#000, 30%);
         margin: 1rem 0 1rem 0.4rem;   
@@ -315,6 +314,13 @@ h1{
     }  
 }
 
+@media all and (min-width: 550px) {
+    //responsive loading spinner//
+.box__circle {
+    left: 20%;
+}
+}
+
 @media all and (min-width: 767px){
 //responsive loading-spinner//
 .box__circle {
@@ -322,13 +328,13 @@ h1{
 }
 
 //responsive index.html//
-.work {
+.operation {
     display: flex;
     flex-wrap: wrap;
     &__title {
         margin-left:$size * 3;
     }
-    &__btn{
+    &__content{
         flex-direction: row;
         column-gap: $size * 3;
         margin:auto;
@@ -416,11 +422,11 @@ h1{
 } 
 
 //responsive index.html//
-.work {
+.operation {
     &__title {
         width: 100%;
     }
-    &__btn {
+    &__content {
         column-gap: $size * 3;
         i {
             padding-left:10%;
@@ -495,7 +501,7 @@ h1{
     margin-top: 1rem;
 }
 
-.work__title,
+.operation__title,
 .restaurant__title {
     text-align: center;
     padding-left: 0;
@@ -515,7 +521,7 @@ h1{
     }
 }
 
-.work__btn {
+.operation__content {
     & i {
         padding-left: 5%; 
         padding-right: 10%;
@@ -537,7 +543,7 @@ h1{
 
 @media all and (min-width:1499px) {
 //responsive index.html//@at-root
-.work__btn--btn {
+.operation__content--btn {
     min-width: 15rem;;
 }
     //responsive menu//
