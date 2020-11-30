@@ -1,0 +1,33 @@
+//mixin//
+@mixin text-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin appear-heart {
+    @include heart-grey;
+    background: $color__gradient;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    animation: appear 100ms;
+}
+
+@mixin global-position {
+    float: right;
+    position: relative;
+}
+
+@mixin heart-grey {
+    z-index:5;
+    opacity:1;
+}
+
+@mixin heart-unseen {
+    opacity: 0;
+    z-index: 1;
+}

@@ -1,0 +1,22 @@
+//animation pour faire apparaitre en douceur le menu//
+.menu__starter,
+.menu__main-course,
+.menu__dessert {
+    animation: appear 1000ms backwards;
+}
+
+.menu__main-course {
+    animation-delay: 500ms;
+}
+
+.menu__dessert {
+    animation-delay: 1000ms;
+}
+
+@media all and (min-width: 450px) {
+//responsive loading spinner//
+.box__circle {
+        left: 18%;
+}
+    
+}

@@ -1,0 +1,102 @@
+
+@keyframes turn-card-validate {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes circle-growth-loading-spinner {
+    0% {
+        transform:scale(0.8);
+    }
+    20% {
+        transform:scale(0.8);
+    }
+    50% {
+        transform:scale(2);
+    }
+    80% {
+        transform:scale(0.8);
+    }
+    100% {
+        transform:scale(0.8);
+    }
+}
+
+@keyframes loading-spinner-apparence {
+    0% {
+        height:100%;
+        opacity:1;
+        background-color: #f3ccffde;
+        background-size: contain;
+    }
+    75% {
+        height: 100%;
+        opacity: 1;
+        background-color: #f3ccffde;
+        background-size: contain;
+    }
+    85% {
+        opacity: 0.7;
+        background-size: contain;
+        background-color: #f3ccffde;
+    }
+    100% {
+        height: 100%;
+        opacity:0;
+    }
+}
+
+@keyframes rotation-dishes {
+    0% {
+        transform: rotate(40deg);
+    }
+    60% {
+        transform: rotate(-40deg);
+    }  
+    100% {
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes change-color-dishes {
+    0% {
+        color: #e41c1c;
+    }
+    17% {
+        color: #ec6314;
+    }
+    34% {
+        color: #f1e753;
+    }
+    51% {
+        color: #3ace35;
+    }
+    68% {
+        color: #3cfdfd;
+    }
+    85% {
+        color: #e712ee;
+    }
+    100% {
+        color: #a106fb;
+    }
+}
+
+@keyframes appear{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

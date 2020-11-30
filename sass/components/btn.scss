@@ -1,0 +1,16 @@
+.btn {
+    margin: auto;
+    padding: 0.8rem 1.3rem;
+    border-radius: 60px;
+    color: $color__white;
+    font-weight: bold;
+    border: none;
+    background: $color__gradient;
+    box-shadow: 1px 1px 8px 1px $color__black--medium;
+    transition: all 300ms;
+    &:hover { 
+        transform: scale(1.01);
+        background: $color__gradient--light;
+        box-shadow: 3px 3px 5px $color__black;
+    }
+}

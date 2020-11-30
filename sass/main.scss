@@ -1,151 +1,16 @@
-html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left};
-
-@mixin global-position {
-    float: right;
-    position: relative;
-}
-
-@mixin text-ellipsis {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-@mixin heart-grey {
-    z-index:5;
-    opacity:1;
-}
-
-@mixin heart-unseen {
-    opacity: 0;
-    z-index: 1;
-}
-
-@mixin appear-heart {
-    @include heart-grey;
-    background: $color__gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: appear 100ms;
-}
-
-@keyframes turn-card-validate {
-    0% {
-        transform: rotate(0);
-    }
-    50% {
-        transform: rotate(180deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes appear{
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes circle-growth-loading-spinner {
-    0% {
-        transform:scale(0.8);
-    }
-    20% {
-        transform:scale(0.8);
-    }
-    50% {
-        transform:scale(2);
-    }
-    80% {
-        transform:scale(0.8);
-    }
-    100% {
-        transform:scale(0.8);
-    }
-}
-
-@keyframes rotation-dishes {
-    0% {
-        transform: rotate(40deg);
-    }
-    60% {
-        transform: rotate(-40deg);
-    }  
-    100% {
-        transform: rotate(40deg);
-    }
-}
-
-@keyframes change-color-dishes {
-    0% {
-        color: #e41c1c;
-    }
-    17% {
-        color: #ec6314;
-    }
-    34% {
-        color: #f1e753;
-    }
-    51% {
-        color: #3ace35;
-    }
-    68% {
-        color: #3cfdfd;
-    }
-    85% {
-        color: #e712ee;
-    }
-    100% {
-        color: #a106fb;
-    }
-}
-
-@keyframes loading-spinner-apparence {
-    0% {
-        height:100%;
-        opacity:1;
-        background-color: #f3ccffde;
-        background-size: contain;
-    }
-    75% {
-        height: 100%;
-        opacity: 1;
-        background-color: #f3ccffde;
-        background-size: contain;
-    }
-    85% {
-        opacity: 0.7;
-        background-size: contain;
-        background-color: #f3ccffde;
-    }
-    100% {
-        height: 100%;
-        opacity:0;
-    }
-}
-
-$color__bg--dusky: #e2e3e4;
-$color__bg--light:rgba(192, 196, 200, 0.2);
-$color__black: rgb(0, 0, 0);
-$color__black--medium: rgba(0, 0, 0, 0.5);
-$color__green--light:rgb(142, 236, 216); 
-$color__white: #FFF;
-$color__purple:#8d51ee;
-$color__gradient: linear-gradient(#e76ce7,#a37cfd);
-$color__gradient--light: linear-gradient(to top,rgb(231, 108, 231, 0.8),rgb(163, 124, 253, 0.8));
-
-
+@import "base/mini-reset";
+@import "utils/variables";
+@import "utils/mixin";
+@import "utils/keyframes";
+@import "components/btn";
+@import "layout/header";
+@import "layout/footer";
+@import "utils/animation";
 
 :root {
     font-family: "roboto";
     font-size: 1.3rem;
+    
 }
 
 body {
@@ -164,65 +29,14 @@ h1, h5 {
 h1{
     font-size: 1.8rem;
     text-align: center;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: $size;
+    padding-bottom: $size;
     color: $color__black;
 }
 
 //centrage loading pinner//
 .box__circle {
-    left: 2%;
-}
-
-//partie : premier bloc du haut//
-.location__mappy {
-    background-color:  $color__bg--dusky;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    column-gap: 1rem;
-    align-items: center;
-    .input_formulaire {
-        background-color: $color__bg--dusky;
-        border: none;
-        font-weight: bold;
-        height: 2rem;
-    }    
-}
-
-.location {
-    background-color: $color__bg--light;
-    height: 17rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1.5rem;
-    text-align: center;
-    &__presentation--titre {
-        font-size: 1.4rem;
-        font-weight: bold;    
-    }
-    & p {
-        font-size: 0.9rem;
-        color: $color__black--medium;
-    }
-}
-
-.btn {
-    margin: auto;
-    padding: 0.8rem 1.3rem;
-    border-radius: 60px;
-    color: $color__white;
-    font-weight: bold;
-    border: none;
-    background: $color__gradient;
-    box-shadow: 1px 1px 8px 1px $color__black--medium;
-    transition: all 300ms;
-    &:hover { 
-        transform: scale(1.01);
-        background: $color__gradient--light;
-        box-shadow: 3px 3px 5px $color__black;
-    }
+    left: 5vw;
 }
 
 //partie deuxieme bloc: fonctionnement//
@@ -231,11 +45,11 @@ h1{
     &__btn {
         display: flex;            
         flex-direction: column;
-        row-gap: 1.5rem;
+        row-gap: $size * 3;
         counter-reset: compteListe;
         &--btn {
-            padding: 1rem 0 0.9rem 0;
-            margin: 0 1.5rem;
+            padding: 1rem 0 0.9rem;
+            margin: 0 $size * 3;
             border-radius: 20px;
             border: none;
             box-shadow: 3px 3px 8px $color__black--medium;
@@ -243,9 +57,9 @@ h1{
             font-weight: bold;
             position: relative;
             transition: 300ms;
-            line-height: 1.5rem;
+            line-height: $size * 3;
             &:nth-child(1) {
-                i {padding-right: 1.5rem;
+                i {padding-right: $size * 3;
                 }
             }
         // insertion des ronds numerotés sur les 3 boutons de fonctionnement//    
@@ -261,14 +75,13 @@ h1{
                 width: 1.3rem;
                 height: 1.3rem;
                 left:-0.7rem;
-                bottom:1rem;
+                bottom:$size * 2;
                 line-height: 1.3rem;
             }
-        // insertion des icones des " boutons du fonctionnement//        
+        // insertion des icones des boutons du fonctionnement//        
             i { 
                 float:left;
                 padding-left: 12%;
- 
                 opacity: 0.5; 
                 font-size: 1.2rem;
             }
@@ -290,25 +103,24 @@ h1{
 .work__title,
 .restaurant__title {
     font-weight: bold;
-    padding-left: 1rem;
+    padding-left: $size * 2;
     font-size: 1.35rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: $size * 3;
 }
 //partie troisieme bloc: restaurant//
 .restaurant {
     display: flex; 
     flex-wrap: wrap;
-    padding-bottom: 2.5rem;
-    border : 1px solid $color__bg--light;
+    padding-bottom: $size * 5;
     background-color: $color__bg--light;
     &__title {
-        padding-top: 2.5rem;
+        padding-top: $size * 5;
     }   
     &__card {
         width: 88%;
         height:14rem;
         margin: auto;
-        margin-bottom:1.5rem;
+        margin-bottom:$size * 3;
         background-color: $color__white;
         box-shadow: 2px 2px 8px $color__black--medium;
         border-radius: 15px;
@@ -317,8 +129,7 @@ h1{
 //zoom et ombre sur les cards de restaurants//            
         &:hover {
             box-shadow: 5px 5px 5px $color__black--medium;
-            -webkit-transform: scale(1.025);
-            -moz-transform: scale(1.025);
+            transform: scale(1.025);
         }
 //insertion  des encadrés "nouveau"//        
         &:nth-of-type(1)::after,
@@ -363,100 +174,57 @@ h1{
             right: 2.02rem;
             &:hover {
                 @include heart-unseen;
-
             }
         }    
        .fas {
             @include heart-unseen;
-            right: 0rem; 
+            right: -0.1rem; 
+            bottom: 2.25rem;
             &:hover {
                 @include appear-heart;
+                font-size: 2.2rem;
             }   
         }
-     }                     
+    }                     
 }    
 
-//bas de page//
-.footer {
-    padding: 1rem 0 2rem 2rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: $color__white;
-    z-index: 1;
-    a {
-        color: $color__white;
-        &:hover {
-            color: #e76ce7;
-        }
-    }
-    ul {
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-        line-height: 1.5rem;
-        li:first-child{ 
-            i {
-                padding-right:1rem;
-            }
-        }
-        li:nth-of-type(2){
-            i {
-               padding-right: 0.6rem;
-            }
-        }
-    }
-}      
-
 //_________________________________________________________//
-                    // menu du restaurant   //
-// insertion de la fleche de retour en haut à gauche//
-.header__page--menu a{
-    &::before{
-        content: " ";
-        position: fixed;
-        z-index: 5;
-        background-image: url("../images/logo/arrow-left.svg");
-        background-repeat: no-repeat;
-        opacity: 0.8;
-        width: 1.3rem;
-        height: 1.3rem;
-        top: 0.8rem;
-        left:1.6rem;
-    }
-}
-
+                    // Autre page HTML: menu du restaurant   //
 .container__menu {
-    border: 1px solid transparent;
     display: flex; 
     flex-direction: column;
     width: 100%;
-        img {
-            width: 100%;
-            max-height: 17rem;
-            object-position: bottom;
-            object-fit: cover;
-        }
-        & .exception {
-            object-position: center;
-        }
-    //insertion des deux coeurs l un sur l autre apres le titre//
-        h2 .far,
-        h2 .fas {
-            @include global-position; 
-        }
-        h2 .far {
-            @include heart-grey;
-            color: $color__black--medium;
-            right: 0.5rem;
-            &:hover {
-                @include heart-unseen;
-            }
-        }
-        h2 .fas {
+    img {
+        width: 100%;
+        max-height: 17rem;
+        object-position: bottom;
+        object-fit: cover;
+    }
+    & .exception {
+        object-position: center;
+    }
+//insertion des deux coeurs l un sur l autre apres le titre//
+    h2 .far,
+    h2 .fas {
+        @include global-position; 
+    }
+    h2 .far {
+        @include heart-grey;
+        color: $color__black--medium;
+        right: $size;
+        &:hover {
             @include heart-unseen;
-            left: 2.1rem;
-            &:hover {
-                @include appear-heart;
-            }
         }
+    }
+    h2 .fas {
+        @include heart-unseen;
+        left: 2.2rem;
+        bottom: 0.15rem;
+        &:hover {
+            @include appear-heart;
+            font-size: 2.8rem;
+        }
+    }
 }
 
 // nom du restaurant en haut du menu//
@@ -464,31 +232,31 @@ h1{
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     background-color: #e9ecf0;
-    padding: 2rem 1.3rem;
-    margin-top: -4rem;
-        h2 {
-            font-family: "shrikhand";
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: $color__black;
-            padding-left: 0.6vh;           
-        }   
+    padding: $size * 4 1.3rem;
+    margin-top: $size * -8;
+    h2 {
+        font-family: "shrikhand";
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: $color__black;
+        padding-left: 0.6vh;           
+    }   
 // bordure verte du menu Entree Plat et Dessert//
-        & h3 {
-            color: lighten(#000, 30%);
-            margin: 1rem 0 1rem 0.4rem;   
-            border-bottom: 3px solid $color__green--light;
-            border-width: medium;
-            width: 9%;
-            padding-bottom: 0.5rem;
-        }
-        .btn {
-            display: block;
-            margin: auto;
-            margin-top: 1.5rem;
-            font-size: 1.1rem;
-            color: $color__white;
-        }
+    & h3 {
+        color: lighten(#000, 30%);
+        margin: 1rem 0 1rem 0.4rem;   
+        border-bottom: 3px solid $color__green--light;
+        border-width: medium;
+        width: 9%;
+        padding-bottom: $size;
+    }
+    .btn {
+        display: block;
+        margin: auto;
+        margin-top: $size * 3;
+        font-size: 1.1rem;
+        color: $color__white;
+    }
 }
 
 //la liste des plats dans le menu//
@@ -523,7 +291,7 @@ h1{
     }       
     &--name {
         width: 100%;
-        padding: 0.5rem;
+        padding: $size;
         min-width: 60%;
         p {
             &:nth-child(1) {
@@ -540,34 +308,11 @@ h1{
         }  
     }
     span {
-    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+    padding: $size * 3 $size $size;
     text-align: right;
     color: rgba(0, 0, 0, 0.7);
     font-weight: bold;
-
     }  
-}
-
-//animation pour faire apparaitre en douceur le menu//
-.menu__starter,
-.menu__main-course,
-.menu__dessert {
-    animation: appear 1000ms backwards;
-}
-
-.menu__main-course {
-    animation-delay: 500ms;
-}
-
-.menu__dessert {
-    animation-delay: 1000ms;
-}
-
-@media all and (min-width: 450px) {
-//responsive loading spinner//
-.box__circle {
-    left: 18%;
-}
 }
 
 @media all and (min-width: 767px){
@@ -581,11 +326,11 @@ h1{
     display: flex;
     flex-wrap: wrap;
     &__title {
-        margin-left:1.5rem;
+        margin-left:$size * 3;
     }
     &__btn{
         flex-direction: row;
-        column-gap: 1.5rem;
+        column-gap: $size * 3;
         margin:auto;
         &--btn {
             display: flex;
@@ -607,15 +352,15 @@ h1{
 .restaurant {
     &__title {
         width: 100%;
-        margin-left:1.5rem;
+        margin-left:$size * 3;
     }
     &__card {
         width: 40%;
         margin: 2%;
         margin-left: 5.5%;
         &:hover {
-            -webkit-transform: scale(1.1);
-            -moz-transform: scale(1.1);
+            transform: scale(1.1);
+
         }
     }
 }
@@ -634,7 +379,7 @@ h1{
             right: 0rem;
         }
         .fas {
-            left:2.6rem;
+            left:2.75rem;
         }  
     }  
 }
@@ -642,8 +387,8 @@ h1{
 .menu {
     width: 70%;
     margin: auto;
-    margin-top: -3rem;
-    margin-bottom: 2rem;
+    margin-top: $size * -6;
+    margin-bottom: $size * 2;
     border-radius: 50px;
     & h3 {
         width: 12%;
@@ -676,7 +421,7 @@ h1{
         width: 100%;
     }
     &__btn {
-        column-gap: 2rem;
+        column-gap: $size * 3;
         i {
             padding-left:10%;
         }
@@ -699,7 +444,7 @@ h1{
     margin: 0;
     padding:1rem 0 0 1rem;
     margin-top: -2.5rem;
-    column-gap: 0.5rem;
+    column-gap: $size;
     border-radius: 50px 50px 0 0;
     h2 {
         width: 100%;
@@ -707,7 +452,7 @@ h1{
             right: 3.5rem;
         }
         .fas {
-            left: -0.9rem;
+            left: -0.8rem;
         }
     }
     &__starter,
@@ -723,7 +468,7 @@ h1{
             }
         }
     }
-    padding-bottom: 2rem;
+    padding-bottom: $size * 3;
 }
 
 }
@@ -805,7 +550,7 @@ h1{
     & .menu {
         max-width: 88%;
         margin: auto;
-        margin-top: -2rem;
+        margin-top: $size * -3;
         border-radius: 50px;
         &__card {
             max-width: 100%;

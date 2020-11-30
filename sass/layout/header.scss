@@ -1,0 +1,48 @@
+// insertion de la fleche de retour en haut à gauche//
+.header__page--menu a{
+    &::before{
+        content: " ";
+        position: fixed;
+        z-index: 5;
+        background-image: url("../images/logo/arrow-left.svg");
+        background-repeat: no-repeat;
+        opacity: 0.8;
+        width: 1.3rem;
+        height: 1.3rem;
+        top: 0.8rem;
+        left:1.6rem;
+    }
+}
+
+.location__mappy {
+    background-color:  $color__bg--dusky;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    align-items: center;
+    .input_formulaire {
+        background-color: $color__bg--dusky;
+        border: none;
+        font-weight: bold;
+        height: $size * 4;
+    }    
+}
+
+.location {
+    background-color: $color__bg--light;
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: $size * 3;
+    text-align: center;
+    &__presentation--titre {
+        font-size: 1.4rem;
+        font-weight: bold;    
+    }
+    & p {
+        font-size: 0.9rem;
+        color: $color__black--medium;
+    }
+}
