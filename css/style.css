@@ -404,13 +404,13 @@ h1 {
 }
 .restaurant__card .far:hover {
   opacity: 0;
-  z-index: 1;
+  z-index: 0;
 }
 .restaurant__card .fas {
   opacity: 0;
-  z-index: 1;
-  right: -0.1rem;
-  bottom: 2.25rem;
+  z-index: 0;
+  right: 0.1rem;
+  bottom: 2.1rem;
 }
 .restaurant__card .fas:hover {
   z-index: 5;
@@ -423,7 +423,7 @@ h1 {
   -moz-text-fill-color: transparent;
   -o-text-fill-color: transparent;
   animation: appear 100ms;
-  font-size: 2.25rem;
+  transform: scale(1.2);
 }
 
 .container__menu {
@@ -453,13 +453,12 @@ h1 {
 }
 .container__menu h2 .far:hover {
   opacity: 0;
-  z-index: 1;
+  z-index: 0;
 }
 .container__menu h2 .fas {
   opacity: 0;
-  z-index: 1;
-  left: 2.2rem;
-  bottom: 0.15rem;
+  z-index: 0;
+  left: 2.15rem;
 }
 .container__menu h2 .fas:hover {
   z-index: 5;
@@ -472,7 +471,7 @@ h1 {
   -moz-text-fill-color: transparent;
   -o-text-fill-color: transparent;
   animation: appear 100ms;
-  font-size: 2.8rem;
+  transform: scale(1.1);
 }
 
 .menu {
